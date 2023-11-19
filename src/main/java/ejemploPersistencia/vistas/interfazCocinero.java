@@ -31,18 +31,18 @@ public class interfazCocinero extends javax.swing.JDialog {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        scrollTablaPedido = new javax.swing.JScrollPane();
+        tablePedidoDesglose = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listPedidos = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
+        buttonSalirSesion = new javax.swing.JButton();
         buttonCerrarPrograma = new javax.swing.JButton();
-        buttonCerrarPrograma1 = new javax.swing.JButton();
-        buttonCerrarPrograma2 = new javax.swing.JButton();
-        buttonCerrarPrograma3 = new javax.swing.JButton();
-        buttonCerrarPrograma4 = new javax.swing.JButton();
+        buttonCancelarPedido = new javax.swing.JButton();
+        buttonEntregarPedido = new javax.swing.JButton();
+        buttonElegirPedido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -52,10 +52,10 @@ public class interfazCocinero extends javax.swing.JDialog {
         jLabel2.setForeground(new java.awt.Color(253, 165, 58));
         jLabel2.setText("Pedido Nº :");
 
-        jTable1.setBackground(new java.awt.Color(255, 249, 241));
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(14, 6, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablePedidoDesglose.setBackground(new java.awt.Color(255, 249, 241));
+        tablePedidoDesglose.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tablePedidoDesglose.setForeground(new java.awt.Color(14, 6, 0));
+        tablePedidoDesglose.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -75,27 +75,27 @@ public class interfazCocinero extends javax.swing.JDialog {
                 return types [columnIndex];
             }
         });
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.setGridColor(new java.awt.Color(222, 218, 215));
-        jTable1.setRowHeight(35);
-        jTable1.setSelectionBackground(new java.awt.Color(250, 223, 152));
-        jTable1.setSelectionForeground(new java.awt.Color(14, 6, 0));
-        jTable1.setShowGrid(true);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tablePedidoDesglose.setColumnSelectionAllowed(true);
+        tablePedidoDesglose.setGridColor(new java.awt.Color(222, 218, 215));
+        tablePedidoDesglose.setRowHeight(35);
+        tablePedidoDesglose.setSelectionBackground(new java.awt.Color(250, 223, 152));
+        tablePedidoDesglose.setSelectionForeground(new java.awt.Color(14, 6, 0));
+        tablePedidoDesglose.setShowGrid(true);
+        tablePedidoDesglose.getTableHeader().setReorderingAllowed(false);
+        scrollTablaPedido.setViewportView(tablePedidoDesglose);
+        tablePedidoDesglose.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        jList1.setBackground(new java.awt.Color(255, 249, 241));
-        jList1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList1.setForeground(new java.awt.Color(14, 6, 0));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listPedidos.setBackground(new java.awt.Color(255, 249, 241));
+        listPedidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        listPedidos.setForeground(new java.awt.Color(14, 6, 0));
+        listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList1.setSelectionBackground(new java.awt.Color(254, 254, 249));
-        jList1.setSelectionForeground(new java.awt.Color(14, 6, 0));
-        jScrollPane1.setViewportView(jList1);
+        listPedidos.setSelectionBackground(new java.awt.Color(254, 254, 249));
+        listPedidos.setSelectionForeground(new java.awt.Color(14, 6, 0));
+        jScrollPane1.setViewportView(listPedidos);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(253, 165, 58));
@@ -109,25 +109,25 @@ public class interfazCocinero extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(153, 66, 0));
         jPanel1.setForeground(new java.awt.Color(153, 66, 0));
 
+        buttonSalirSesion.setBackground(new java.awt.Color(253, 165, 58));
+        buttonSalirSesion.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonSalirSesion.setForeground(new java.awt.Color(153, 66, 0));
+        buttonSalirSesion.setText("Salir Sesión");
+        buttonSalirSesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonSalirSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSalirSesionActionPerformed(evt);
+            }
+        });
+
         buttonCerrarPrograma.setBackground(new java.awt.Color(253, 165, 58));
         buttonCerrarPrograma.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         buttonCerrarPrograma.setForeground(new java.awt.Color(153, 66, 0));
-        buttonCerrarPrograma.setText("Salir Sesión");
+        buttonCerrarPrograma.setText("Cerrar Programa");
         buttonCerrarPrograma.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonCerrarPrograma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCerrarProgramaActionPerformed(evt);
-            }
-        });
-
-        buttonCerrarPrograma1.setBackground(new java.awt.Color(253, 165, 58));
-        buttonCerrarPrograma1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonCerrarPrograma1.setForeground(new java.awt.Color(153, 66, 0));
-        buttonCerrarPrograma1.setText("Cerrar Programa");
-        buttonCerrarPrograma1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buttonCerrarPrograma1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCerrarPrograma1ActionPerformed(evt);
             }
         });
 
@@ -137,9 +137,9 @@ public class interfazCocinero extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(buttonCerrarPrograma1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(buttonCerrarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonSalirSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(566, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -147,28 +147,28 @@ public class interfazCocinero extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonCerrarPrograma1)
-                    .addComponent(buttonCerrarPrograma))
+                    .addComponent(buttonCerrarPrograma)
+                    .addComponent(buttonSalirSesion))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        buttonCerrarPrograma2.setBackground(new java.awt.Color(253, 165, 58));
-        buttonCerrarPrograma2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonCerrarPrograma2.setForeground(new java.awt.Color(153, 66, 0));
-        buttonCerrarPrograma2.setText("Cancelar Pedido");
-        buttonCerrarPrograma2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonCancelarPedido.setBackground(new java.awt.Color(253, 165, 58));
+        buttonCancelarPedido.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonCancelarPedido.setForeground(new java.awt.Color(153, 66, 0));
+        buttonCancelarPedido.setText("Cancelar Pedido");
+        buttonCancelarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        buttonCerrarPrograma3.setBackground(new java.awt.Color(253, 165, 58));
-        buttonCerrarPrograma3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonCerrarPrograma3.setForeground(new java.awt.Color(153, 66, 0));
-        buttonCerrarPrograma3.setText("Entregar Pedido");
-        buttonCerrarPrograma3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonEntregarPedido.setBackground(new java.awt.Color(253, 165, 58));
+        buttonEntregarPedido.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonEntregarPedido.setForeground(new java.awt.Color(153, 66, 0));
+        buttonEntregarPedido.setText("Entregar Pedido");
+        buttonEntregarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        buttonCerrarPrograma4.setBackground(new java.awt.Color(253, 165, 58));
-        buttonCerrarPrograma4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonCerrarPrograma4.setForeground(new java.awt.Color(153, 66, 0));
-        buttonCerrarPrograma4.setText("Elegir Pedido");
-        buttonCerrarPrograma4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonElegirPedido.setBackground(new java.awt.Color(253, 165, 58));
+        buttonElegirPedido.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonElegirPedido.setForeground(new java.awt.Color(153, 66, 0));
+        buttonElegirPedido.setText("Elegir Pedido");
+        buttonElegirPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -178,19 +178,19 @@ public class interfazCocinero extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonCerrarPrograma4))
+                        .addComponent(buttonElegirPedido))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(scrollTablaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2))
                                 .addGap(35, 35, 35))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(buttonCerrarPrograma2)
+                                .addComponent(buttonCancelarPedido)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonCerrarPrograma3)
+                                .addComponent(buttonEntregarPedido)
                                 .addGap(38, 38, 38)))
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -212,15 +212,15 @@ public class interfazCocinero extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)
-                        .addComponent(buttonCerrarPrograma4))
+                        .addComponent(buttonElegirPedido))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(scrollTablaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buttonCerrarPrograma2)
-                            .addComponent(buttonCerrarPrograma3)))
+                            .addComponent(buttonCancelarPedido)
+                            .addComponent(buttonEntregarPedido)))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -240,16 +240,16 @@ public class interfazCocinero extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
+    private void buttonSalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirSesionActionPerformed
         // TODO add your handling code here:
         dispose();
         PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
         menus.setVisible(true);
-    }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
+    }//GEN-LAST:event_buttonSalirSesionActionPerformed
 
-    private void buttonCerrarPrograma1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarPrograma1ActionPerformed
+    private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCerrarPrograma1ActionPerformed
+    }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,19 +294,19 @@ public class interfazCocinero extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCancelarPedido;
     private javax.swing.JButton buttonCerrarPrograma;
-    private javax.swing.JButton buttonCerrarPrograma1;
-    private javax.swing.JButton buttonCerrarPrograma2;
-    private javax.swing.JButton buttonCerrarPrograma3;
-    private javax.swing.JButton buttonCerrarPrograma4;
+    private javax.swing.JButton buttonElegirPedido;
+    private javax.swing.JButton buttonEntregarPedido;
+    private javax.swing.JButton buttonSalirSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JList<String> listPedidos;
+    private javax.swing.JScrollPane scrollTablaPedido;
+    private javax.swing.JTable tablePedidoDesglose;
     // End of variables declaration//GEN-END:variables
 }
