@@ -5,13 +5,14 @@
 package ejemploPersistencia.vistas;
 
 import javax.swing.JFrame;
+import javax.swing.JTable;
 
 /**
  *
  * @author Lorena
  */
 public class InterfazSnacksMenu extends javax.swing.JDialog {
-
+    private JTable table;
     /**
      * Creates new form interfazCocinero
      */
@@ -80,6 +81,11 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         buttonCancelarSnacks.setForeground(new java.awt.Color(153, 66, 0));
         buttonCancelarSnacks.setText("Cancelar Selección");
         buttonCancelarSnacks.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonCancelarSnacks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelarSnacksActionPerformed(evt);
+            }
+        });
 
         buttonVaciarSnacks.setBackground(new java.awt.Color(253, 165, 58));
         buttonVaciarSnacks.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -97,6 +103,11 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         buttonElegirSnack.setForeground(new java.awt.Color(153, 66, 0));
         buttonElegirSnack.setText("Elegir Snack(s)");
         buttonElegirSnack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonElegirSnack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonElegirSnackActionPerformed(evt);
+            }
+        });
 
         jSeparator1.setBackground(new java.awt.Color(153, 66, 0));
         jSeparator1.setForeground(new java.awt.Color(153, 66, 0));
@@ -373,8 +384,149 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonVaciarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVaciarSnacksActionPerformed
-        // TODO add your handling code here:
+//SanacksDulces
+    spinnerCrepes.setValue(0);
+    spinnerCroissant.setValue(0);
+    spinnerDonut.setValue(0);
+    spinnerHelado.setValue(0);
+    spinnerMagdalena.setValue(0);
+    spinnerTartaFresa.setValue(0);
+    spinnerTartaQueso.setValue(0);
+    spinnerTortitas.setValue(0);
+//SnacksSalados
+    spinnerSerrano.setValue(0);
+    spinnerPata.setValue(0);
+    spinnerPapas.setValue(0);
+    spinnerPollo.setValue(0);
+    spinnerMixto.setValue(0);
+    spinnerCharcuteria.setValue(0);
+    spinnerQuesos.setValue(0);
+    spinnerTortilla.setValue(0);
     }//GEN-LAST:event_buttonVaciarSnacksActionPerformed
+
+    private void buttonElegirSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirSnackActionPerformed
+
+//CargarTabla
+//SancksDulces
+        if ((int) spinnerCrepes.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Crepes",
+                spinnerCrepes.getValue(),
+                2.50,
+                ((int) spinnerCrepes.getValue() * 2.50)
+            });
+        }
+        if ((int) spinnerCroissant.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Croissant",
+                spinnerCroissant.getValue(),
+                2.00,
+                ((int) spinnerCroissant.getValue() * 2.00)
+            });
+        }
+        if ((int) spinnerDonut.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Donut",
+                spinnerDonut.getValue(),
+                2.50,
+                ((int) spinnerDonut.getValue() * 2.50)
+            });
+        }
+        if ((int) spinnerHelado.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Helado",
+                spinnerHelado.getValue(),
+                2.50,
+                ((int) spinnerHelado.getValue() * 2.50)
+            });
+        }
+        if ((int) spinnerMagdalena.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Magdalena",
+                spinnerMagdalena.getValue(),
+                2.50,
+                ((int) spinnerMagdalena.getValue() * 2.50)
+            });
+        }
+        if ((int) spinnerTartaFresa.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Tarta de Fresa",
+                spinnerTartaFresa.getValue(),
+                2.50,
+                ((int) spinnerTartaFresa.getValue() * 2.50)
+            });
+        }
+        if ((int) spinnerTartaQueso.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Tarta de Queso",
+                spinnerTartaQueso.getValue(),
+                2.50,
+                ((int) spinnerTartaQueso.getValue() * 2.50)
+            });
+        }
+        if ((int) spinnerTortitas.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Tortitas",
+                spinnerTortitas.getValue(),
+                2.50,
+                ((int) spinnerTortitas.getValue() * 2.50)
+            });
+        }
+
+//SnacksSalados
+        int serrano = (int) spinnerSerrano.getValue();
+        int pata = (int) spinnerPata.getValue();
+        int papas = (int) spinnerPapas.getValue();
+        int pollo = (int) spinnerPollo.getValue();
+        int mixto = (int) spinnerMixto.getValue();
+        int charcuteria = (int) spinnerCharcuteria.getValue();
+        int quesos = (int) spinnerQuesos.getValue();
+        int tortilla = (int) spinnerTortilla.getValue();
+
+//SanacksDulces
+    spinnerCrepes.setValue(0);
+    spinnerCroissant.setValue(0);
+    spinnerDonut.setValue(0);
+    spinnerHelado.setValue(0);
+    spinnerMagdalena.setValue(0);
+    spinnerTartaFresa.setValue(0);
+    spinnerTartaQueso.setValue(0);
+    spinnerTortitas.setValue(0);
+//SnacksSalados
+    spinnerSerrano.setValue(0);
+    spinnerPata.setValue(0);
+    spinnerPapas.setValue(0);
+    spinnerPollo.setValue(0);
+    spinnerMixto.setValue(0);
+    spinnerCharcuteria.setValue(0);
+    spinnerQuesos.setValue(0);
+    spinnerTortilla.setValue(0);
+    
+
+    }//GEN-LAST:event_buttonElegirSnackActionPerformed
+
+    private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
+//SanacksDulces
+    spinnerCrepes.setValue(0);
+    spinnerCroissant.setValue(0);
+    spinnerDonut.setValue(0);
+    spinnerHelado.setValue(0);
+    spinnerMagdalena.setValue(0);
+    spinnerTartaFresa.setValue(0);
+    spinnerTartaQueso.setValue(0);
+    spinnerTortitas.setValue(0);
+//SnacksSalados
+    spinnerSerrano.setValue(0);
+    spinnerPata.setValue(0);
+    spinnerPapas.setValue(0);
+    spinnerPollo.setValue(0);
+    spinnerMixto.setValue(0);
+    spinnerCharcuteria.setValue(0);
+    spinnerQuesos.setValue(0);
+    spinnerTortilla.setValue(0);
+    
+    this.setVisible(false);   
+    }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarSnacks;

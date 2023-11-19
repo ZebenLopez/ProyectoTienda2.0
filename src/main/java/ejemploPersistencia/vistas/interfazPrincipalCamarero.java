@@ -5,6 +5,7 @@
 package ejemploPersistencia.vistas;
 
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,6 +13,7 @@ import javax.swing.JFrame;
  */
 public class InterfazPrincipalCamarero extends javax.swing.JDialog {
 
+   
     /**
      * Creates new form interfazCocinero
      */
@@ -19,7 +21,11 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-
+    
+    public static void AddRowJTable(Object[] dataRow){
+    DefaultTableModel tableModel = (DefaultTableModel) tablePedido.getModel();
+    tableModel.addRow(dataRow);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -261,17 +267,18 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonSalirSesionActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
     private void buttonBebidaFriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBebidaFriaActionPerformed
-        // TODO add your handling code here:
+        InterfazBebidasMenu bebida = new InterfazBebidasMenu((JFrame) this.getParent(), true);
+        bebida.setVisible(true);
     }//GEN-LAST:event_buttonBebidaFriaActionPerformed
 
     private void buttonSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSnackActionPerformed
-        // TODO add your handling code here:
+        InterfazSnacksMenu snacks = new InterfazSnacksMenu((JFrame) this.getParent(), true);
+        snacks.setVisible(true);
     }//GEN-LAST:event_buttonSnackActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBebidaFria;
     private javax.swing.JButton buttonCancelarPedido;
@@ -285,6 +292,6 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JScrollPane scrollTablaPedido;
-    private javax.swing.JTable tablePedido;
+    private static javax.swing.JTable tablePedido;
     // End of variables declaration//GEN-END:variables
 }

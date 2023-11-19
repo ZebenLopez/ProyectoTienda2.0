@@ -31,8 +31,8 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
 
         jPanel2 = new javax.swing.JPanel();
         buttonCancelarSnacks = new javax.swing.JButton();
-        buttonVaciarSnacks = new javax.swing.JButton();
-        buttonElegirSnack = new javax.swing.JButton();
+        buttonVaciarBebida = new javax.swing.JButton();
+        buttonElegirBebida = new javax.swing.JButton();
         spinnerTeHelado = new javax.swing.JSpinner();
         spinnerCappuccino = new javax.swing.JSpinner();
         spinnerChocolate = new javax.swing.JSpinner();
@@ -80,23 +80,33 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
         buttonCancelarSnacks.setForeground(new java.awt.Color(153, 66, 0));
         buttonCancelarSnacks.setText("Cancelar Selección");
         buttonCancelarSnacks.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        buttonVaciarSnacks.setBackground(new java.awt.Color(253, 165, 58));
-        buttonVaciarSnacks.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonVaciarSnacks.setForeground(new java.awt.Color(153, 66, 0));
-        buttonVaciarSnacks.setText("Vaciar Bebida(s)");
-        buttonVaciarSnacks.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buttonVaciarSnacks.addActionListener(new java.awt.event.ActionListener() {
+        buttonCancelarSnacks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonVaciarSnacksActionPerformed(evt);
+                buttonCancelarSnacksActionPerformed(evt);
             }
         });
 
-        buttonElegirSnack.setBackground(new java.awt.Color(255, 242, 66));
-        buttonElegirSnack.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonElegirSnack.setForeground(new java.awt.Color(153, 66, 0));
-        buttonElegirSnack.setText("Elegir Bebida(s)");
-        buttonElegirSnack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonVaciarBebida.setBackground(new java.awt.Color(253, 165, 58));
+        buttonVaciarBebida.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonVaciarBebida.setForeground(new java.awt.Color(153, 66, 0));
+        buttonVaciarBebida.setText("Vaciar Bebida(s)");
+        buttonVaciarBebida.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonVaciarBebida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVaciarBebidaActionPerformed(evt);
+            }
+        });
+
+        buttonElegirBebida.setBackground(new java.awt.Color(255, 242, 66));
+        buttonElegirBebida.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonElegirBebida.setForeground(new java.awt.Color(153, 66, 0));
+        buttonElegirBebida.setText("Elegir Bebida(s)");
+        buttonElegirBebida.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonElegirBebida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonElegirBebidaActionPerformed(evt);
+            }
+        });
 
         jSeparator1.setBackground(new java.awt.Color(153, 66, 0));
         jSeparator1.setForeground(new java.awt.Color(153, 66, 0));
@@ -258,9 +268,9 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonVaciarSnacks, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonVaciarBebida, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(buttonElegirSnack, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonElegirBebida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(buttonCancelarSnacks, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
@@ -321,8 +331,8 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
                             .addComponent(spinnerCortado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerEspresso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spinnerEspresso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -350,11 +360,11 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(36, 36, 36)
-                        .addComponent(buttonElegirSnack, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonElegirBebida, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(buttonCancelarSnacks, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
-                        .addComponent(buttonVaciarSnacks, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonVaciarBebida, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(110, 110, 110))))
         );
 
@@ -372,14 +382,77 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonVaciarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVaciarSnacksActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonVaciarSnacksActionPerformed
+    private void buttonVaciarBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVaciarBebidaActionPerformed
+//BebidasCalientes
+        spinnerCappuccino.setValue(0);
+        spinnerChocolate.setValue(0);
+        spinnerCortado.setValue(0);
+        spinnerEspresso.setValue(0);
+        spinnerLatte.setValue(0);
+        spinnerMocha.setValue(0);
+        spinnerTeNegro.setValue(0);
+        spinnerTeVerde.setValue(0);
+//BebidasFrias
+        spinnerBatido.setValue(0);
+        spinnerCafeHelado.setValue(0);
+        spinnerCacaoLat.setValue(0);
+        spinnerCocaCola.setValue(0);
+        spinnerFrappe.setValue(0);
+        spinnerLimonada.setValue(0);
+        spinnerNestea.setValue(0);
+        spinnerTeHelado.setValue(0);
+    }//GEN-LAST:event_buttonVaciarBebidaActionPerformed
+
+    private void buttonElegirBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirBebidaActionPerformed
+//BebidasCalientes
+        int cappuccino = (int) spinnerCappuccino.getValue();
+        int chocolate = (int) spinnerChocolate.getValue();
+        int cortado = (int) spinnerCortado.getValue();
+        int espresso = (int) spinnerEspresso.getValue();
+        int latte = (int) spinnerLatte.getValue();
+        int mocha = (int) spinnerMocha.getValue();
+        int teNegro = (int) spinnerTeNegro.getValue();
+        int teVerde = (int) spinnerTeVerde.getValue();
+//BebidasFrias
+        int batido = (int) spinnerBatido.getValue();
+        int cafeHelado = (int) spinnerCafeHelado.getValue();
+        int cacaoLat = (int) spinnerCacaoLat.getValue();
+        int cocaCola = (int) spinnerCocaCola.getValue();
+        int frappe = (int) spinnerFrappe.getValue();
+        int limonada = (int) spinnerLimonada.getValue();
+        int nestea = (int) spinnerNestea.getValue();
+        int teHelado = (int) spinnerTeHelado.getValue();
+    
+    this.setVisible(false);
+    }//GEN-LAST:event_buttonElegirBebidaActionPerformed
+
+    private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
+//BebidasCalientes
+        spinnerCappuccino.setValue(0);
+        spinnerChocolate.setValue(0);
+        spinnerCortado.setValue(0);
+        spinnerEspresso.setValue(0);
+        spinnerLatte.setValue(0);
+        spinnerMocha.setValue(0);
+        spinnerTeNegro.setValue(0);
+        spinnerTeVerde.setValue(0);
+//BebidasFrias
+        spinnerBatido.setValue(0);
+        spinnerCafeHelado.setValue(0);
+        spinnerCacaoLat.setValue(0);
+        spinnerCocaCola.setValue(0);
+        spinnerFrappe.setValue(0);
+        spinnerLimonada.setValue(0);
+        spinnerNestea.setValue(0);
+        spinnerTeHelado.setValue(0);
+    
+    this.setVisible(false);
+    }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarSnacks;
-    private javax.swing.JButton buttonElegirSnack;
-    private javax.swing.JButton buttonVaciarSnacks;
+    private javax.swing.JButton buttonElegirBebida;
+    private javax.swing.JButton buttonVaciarBebida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

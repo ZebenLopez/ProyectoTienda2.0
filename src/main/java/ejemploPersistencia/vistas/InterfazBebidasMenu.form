@@ -133,9 +133,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="buttonVaciarSnacks" min="-2" pref="126" max="-2" attributes="0"/>
+                              <Component id="buttonVaciarBebida" min="-2" pref="126" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="buttonElegirSnack" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                                  <Component id="buttonElegirBebida" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
                                   <Component id="buttonCancelarSnacks" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -216,9 +216,9 @@
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="spinnerEspresso" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -254,11 +254,11 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="buttonElegirSnack" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="buttonElegirBebida" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="buttonCancelarSnacks" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="buttonVaciarSnacks" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="buttonVaciarBebida" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -285,8 +285,11 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCancelarSnacksActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonVaciarSnacks">
+        <Component class="javax.swing.JButton" name="buttonVaciarBebida">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="3a" green="a5" red="fd" type="rgb"/>
@@ -305,10 +308,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonVaciarSnacksActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonVaciarBebidaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonElegirSnack">
+        <Component class="javax.swing.JButton" name="buttonElegirBebida">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="42" green="f2" red="ff" type="rgb"/>
@@ -326,6 +329,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonElegirBebidaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSpinner" name="spinnerTeHelado">
         </Component>

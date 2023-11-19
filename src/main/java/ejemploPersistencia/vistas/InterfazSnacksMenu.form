@@ -285,6 +285,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCancelarSnacksActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonVaciarSnacks">
           <Properties>
@@ -326,6 +329,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonElegirSnackActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSpinner" name="spinnerCrepes">
         </Component>
