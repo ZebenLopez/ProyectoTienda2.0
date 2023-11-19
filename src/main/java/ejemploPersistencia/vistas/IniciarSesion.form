@@ -75,7 +75,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="buttonIrACrearUsusario" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="buttonInicioSesion" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
                       </Group>
@@ -120,7 +120,7 @@
                           <Component id="buttonCerrarPrograma" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="buttonCrearUsuario" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="buttonIrACrearUsusario" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="buttonInicioSesion" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
@@ -202,6 +202,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldUsuarioMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldUsuarioActionPerformed"/>
           </Events>
         </Component>
@@ -235,6 +236,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldContrasenyaMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldContrasenyaActionPerformed"/>
           </Events>
         </Component>
@@ -263,7 +265,7 @@
             <Property name="text" type="java.lang.String" value="&#xbf;No tengo cuenta?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonIrACrearUsusario">
+        <Component class="javax.swing.JButton" name="buttonInicioSesion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="3a" green="a5" red="fd" type="rgb"/>
@@ -282,7 +284,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonIrACrearUsusarioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonInicioSesionActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonCrearUsuario">
@@ -296,7 +298,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="42" red="99" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Crear Usuario"/>
+            <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder/>

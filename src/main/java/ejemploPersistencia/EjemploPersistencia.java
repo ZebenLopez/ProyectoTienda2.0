@@ -1,7 +1,6 @@
 package ejemploPersistencia;
 
 import ejemploPersistencia.persistence.UsuarioJpaController;
-import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Usuario;
 import ejemploPersistencia.persistence.ControladorGralPersistencia;
 import ejemploPersistencia.exceptions.NonexistentEntityException;
@@ -30,7 +29,7 @@ public class EjemploPersistencia {
 
         for (Usuario usuario : usuarios) {
             System.out.println("Nombre: " + usuario.getNombre());
-            System.out.println("Contraseña: " + usuario.getContraseña());
+            System.out.println("Contraseña: " + usuario.getContrasegna());
             System.out.println("Rol: " + usuario.getRol());
         }
         //RELLENAR TABLA

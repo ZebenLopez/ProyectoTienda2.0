@@ -23,7 +23,7 @@ public class Usuario implements Serializable {
     private String nombre;
 
     @Basic
-    private String contraseña;
+    private String contrasegna;
     private String rol;
 
     public void setRol(String rol) {
@@ -38,8 +38,8 @@ public class Usuario implements Serializable {
         return nombre;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasegna() {
+        return contrasegna;
     }
 
     public void setNombre(String nombre) {
@@ -47,12 +47,12 @@ public class Usuario implements Serializable {
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.contrasegna = contraseña;
     }
 
     public Usuario(String nombreu, String clave, String rol) {
         this.nombre = nombreu;
-        this.contraseña = clave;
+        this.contrasegna = clave;
         this.rol = rol;
     }
 

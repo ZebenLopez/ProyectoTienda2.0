@@ -4,12 +4,7 @@
  */
 package ejemploPersistencia.vistas;
 
-import ejemploPersistencia.models.Usuario;
-import ejemploPersistencia.persistence.ControladorGralPersistencia;
-import ejemploPersistencia.persistence.UsuarioJpaController;
-import java.util.List;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import utils.Validacion;
 
 /**
@@ -17,6 +12,7 @@ import utils.Validacion;
  * @author Zeben
  */
 public class IniciarSesion extends javax.swing.JDialog {
+
     Validacion validacion = new Validacion();
 
     /**
@@ -29,25 +25,6 @@ public class IniciarSesion extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }
 
-    //COMPROBAR si usuarios existen
-//    public boolean comprobarExistenciaUsuarios() {
-//        ControladorGralPersistencia controlador = new ControladorGralPersistencia();
-//        UsuarioJpaController jpaUsuario = controlador.getJpaUsuario();
-//        List<Usuario> usuarios = jpaUsuario.findUsuarioEntities();
-//        boolean comprobar = false;
-//
-//        for (Usuario usuario : usuarios) {
-//            System.out.println("Nombre: " + usuario.getNombre());
-//            System.out.println("Contraseña: " + usuario.getContraseña());
-//            System.out.println("Rol: " + usuario.getRol());
-//            if (usuario.getNombre().equals(textFieldUsuario.getText())
-//                    && usuario.getContraseña().equals(textFieldContrasenya.getText())) {
-//                comprobar = true;
-//            }
-//        }
-//        return comprobar;
-//    }
-   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,7 +44,7 @@ public class IniciarSesion extends javax.swing.JDialog {
         textFieldContrasenya = new javax.swing.JTextField();
         checkSesionIniciada = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
-        buttonIrACrearUsusario = new javax.swing.JButton();
+        buttonInicioSesion = new javax.swing.JButton();
         buttonCrearUsuario = new javax.swing.JButton();
         buttonCerrarPrograma = new javax.swing.JButton();
 
@@ -107,11 +84,6 @@ public class IniciarSesion extends javax.swing.JDialog {
         textFieldUsuario.setForeground(new java.awt.Color(89, 38, 0));
         textFieldUsuario.setText("Escribe aquí tu usuario");
         textFieldUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        textFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldUsuarioActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 66, 0));
@@ -122,40 +94,30 @@ public class IniciarSesion extends javax.swing.JDialog {
         textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
         textFieldContrasenya.setText("Escribe aqui tu contraseña");
         textFieldContrasenya.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        textFieldContrasenya.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldContrasenyaActionPerformed(evt);
-            }
-        });
 
         checkSesionIniciada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkSesionIniciada.setForeground(new java.awt.Color(253, 165, 58));
         checkSesionIniciada.setText("Mantener sesión Iniciada");
-        checkSesionIniciada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkSesionIniciadaActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(253, 165, 58));
         jLabel4.setText("¿No tengo cuenta?");
 
-        buttonIrACrearUsusario.setBackground(new java.awt.Color(253, 165, 58));
-        buttonIrACrearUsusario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonIrACrearUsusario.setForeground(new java.awt.Color(153, 66, 0));
-        buttonIrACrearUsusario.setText("Crear Usuario");
-        buttonIrACrearUsusario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buttonIrACrearUsusario.addActionListener(new java.awt.event.ActionListener() {
+        buttonInicioSesion.setBackground(new java.awt.Color(253, 165, 58));
+        buttonInicioSesion.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonInicioSesion.setForeground(new java.awt.Color(153, 66, 0));
+        buttonInicioSesion.setText("Crear Usuario");
+        buttonInicioSesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonIrACrearUsusarioActionPerformed(evt);
+                buttonInicioSesionActionPerformed(evt);
             }
         });
 
         buttonCrearUsuario.setBackground(new java.awt.Color(253, 165, 58));
         buttonCrearUsuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         buttonCrearUsuario.setForeground(new java.awt.Color(153, 66, 0));
-        buttonCrearUsuario.setText("Crear Usuario");
+        buttonCrearUsuario.setText("Iniciar Sesión");
         buttonCrearUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +163,7 @@ public class IniciarSesion extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(buttonIrACrearUsusario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buttonInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(185, 185, 185))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
@@ -236,7 +198,7 @@ public class IniciarSesion extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(buttonCerrarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(buttonIrACrearUsusario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
 
@@ -256,15 +218,11 @@ public class IniciarSesion extends javax.swing.JDialog {
 
     private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
-        if (validacion.validarLogin(textFieldUsuario.getText(), textFieldContrasenya.getText())){
+        if (validacion.validarLogin(textFieldUsuario.getText(), textFieldContrasenya.getText())) {
             dispose();
             PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
             menus.setVisible(true);
         }
-            
-        
-
-
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
@@ -272,24 +230,13 @@ public class IniciarSesion extends javax.swing.JDialog {
         System.exit(0);
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
-    private void textFieldContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenyaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldContrasenyaActionPerformed
-
-    private void textFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldUsuarioActionPerformed
-
-    private void checkSesionIniciadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkSesionIniciadaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkSesionIniciadaActionPerformed
-
-    private void buttonIrACrearUsusarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrACrearUsusarioActionPerformed
+    private void buttonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInicioSesionActionPerformed
         // TODO add your handling code here:
         dispose();
         CrearUsuario crearUsuario = new CrearUsuario((JFrame) this.getParent(), true);
         crearUsuario.setVisible(true);
-    }//GEN-LAST:event_buttonIrACrearUsusarioActionPerformed
+    }//GEN-LAST:event_buttonInicioSesionActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -298,7 +245,7 @@ public class IniciarSesion extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCerrarPrograma;
     private javax.swing.JButton buttonCrearUsuario;
-    private javax.swing.JButton buttonIrACrearUsusario;
+    private javax.swing.JButton buttonInicioSesion;
     private javax.swing.JCheckBox checkSesionIniciada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

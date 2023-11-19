@@ -6,13 +6,17 @@ package ejemploPersistencia.vistas;
 
 import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Usuario;
+import java.awt.Frame;
 import javax.swing.JFrame;
+import utils.Validacion;
 
 /**
  *
  * @author Zeben
  */
 public class CrearUsuario extends javax.swing.JDialog {
+
+    Validacion validacion = new Validacion();
 
     /**
      * Creates new form EstasSeguro
@@ -275,16 +279,16 @@ public class CrearUsuario extends javax.swing.JDialog {
     private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
         //Falta control de excepciones para password y no se repita user
-        ControladorGralModelo registroUsuario = new ControladorGralModelo();
-        Usuario usuario = new Usuario(textFieldUsuario.getText(), textFieldContrasenya.getText(), (String) comboBoxRol.getSelectedItem());
-        registroUsuario.crearUsuario(usuario);
+        if (validacion.validarRegistro(textFieldUsuario.getText(), textFieldContrasenya.getText(), textFieldRepetirContrasenya.getText())) {
+            ControladorGralModelo registroUsuario = new ControladorGralModelo();
+            Usuario usuario = new Usuario(textFieldUsuario.getText(), textFieldContrasenya.getText(), (String) comboBoxRol.getSelectedItem());
+            registroUsuario.crearUsuario(usuario);
+        }
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
         // TODO add your handling code here:
-        dispose();
-        PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
-        menus.setVisible(true);
+        System.exit(0);
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
     private void textFieldContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenyaActionPerformed
@@ -305,6 +309,9 @@ public class CrearUsuario extends javax.swing.JDialog {
 
     private void buttonIrAIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrAIniciarSesionActionPerformed
         // TODO add your handling code here:
+        dispose();
+        IniciarSesion iniciarSesion = new IniciarSesion((Frame) this.getParent(), true);
+        iniciarSesion.setVisible(true);
     }//GEN-LAST:event_buttonIrAIniciarSesionActionPerformed
 
     private void textFieldRepetirContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaActionPerformed
