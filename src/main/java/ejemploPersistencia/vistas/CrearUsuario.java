@@ -32,119 +32,191 @@ public class CrearUsuario extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        botonSalir = new javax.swing.JButton();
-        botonSeguro = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        textFieldUsuario = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        textFieldContrasenya = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        textFieldRepetirContrasenya = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        comboBoxRol = new javax.swing.JComboBox<>();
+        checkSesionIniciada = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        buttonIrAIniciarSesion = new javax.swing.JButton();
+        buttonCancelar = new javax.swing.JButton();
+        buttonCrearUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(153, 66, 0));
 
         jPanel1.setBackground(new java.awt.Color(89, 38, 0));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gatoSinFondoPeque.png"))); // NOI18N
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(253, 165, 58));
         jLabel1.setText("Nuevo Usuario");
 
-        botonSalir.setBackground(new java.awt.Color(253, 165, 58));
-        botonSalir.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        botonSalir.setForeground(new java.awt.Color(153, 66, 0));
-        botonSalir.setText("Iniciar Sesión");
-        botonSalir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botonSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSalirActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(252, 202, 70));
 
-        botonSeguro.setBackground(new java.awt.Color(253, 165, 58));
-        botonSeguro.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        botonSeguro.setForeground(new java.awt.Color(153, 66, 0));
-        botonSeguro.setText("Cancelar");
-        botonSeguro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botonSeguro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSeguroActionPerformed(evt);
-            }
-        });
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gatoSin FondoGrande.png"))); // NOI18N
 
-        jTextField1.setBackground(new java.awt.Color(255, 249, 241));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(89, 38, 0));
-        jTextField1.setText("Escribe aqui tu usuario");
-        jTextField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 66, 0));
         jLabel3.setText("Nombre de Usuario");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 66, 0));
-        jLabel4.setText("Contraseña");
-
-        jTextField2.setBackground(new java.awt.Color(255, 249, 241));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(89, 38, 0));
-        jTextField2.setText("Escribe aqui tu contraseña");
-        jTextField2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textFieldUsuario.setBackground(new java.awt.Color(255, 249, 241));
+        textFieldUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        textFieldUsuario.setForeground(new java.awt.Color(89, 38, 0));
+        textFieldUsuario.setText("Escribe aquí tu usuario");
+        textFieldUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        textFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textFieldUsuarioActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(253, 165, 58));
-        jCheckBox1.setText("Mantener sesión Iniciada");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 66, 0));
+        jLabel5.setText("Contraseña");
+
+        textFieldContrasenya.setBackground(new java.awt.Color(255, 249, 241));
+        textFieldContrasenya.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
+        textFieldContrasenya.setText("Escribe aqui tu contraseña");
+        textFieldContrasenya.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        textFieldContrasenya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                textFieldContrasenyaActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 66, 0));
+        jLabel7.setText("Repetir Contraseña");
+
+        textFieldRepetirContrasenya.setBackground(new java.awt.Color(255, 249, 241));
+        textFieldRepetirContrasenya.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        textFieldRepetirContrasenya.setForeground(new java.awt.Color(89, 38, 0));
+        textFieldRepetirContrasenya.setText("Repite aquí tu contraseña");
+        textFieldRepetirContrasenya.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        textFieldRepetirContrasenya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldRepetirContrasenyaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 66, 0));
+        jLabel6.setText("Rol como Trabajador");
+
+        comboBoxRol.setBackground(new java.awt.Color(255, 249, 241));
+        comboBoxRol.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        comboBoxRol.setForeground(new java.awt.Color(89, 38, 0));
+        comboBoxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cocinero/a", "Camarero/a" }));
+        comboBoxRol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxRolActionPerformed(evt);
+            }
+        });
+
+        checkSesionIniciada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        checkSesionIniciada.setForeground(new java.awt.Color(253, 165, 58));
+        checkSesionIniciada.setText("Mantener sesión Iniciada");
+        checkSesionIniciada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkSesionIniciadaActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(253, 165, 58));
+        jLabel4.setText("¿Ya tengo cuenta?");
+
+        buttonIrAIniciarSesion.setBackground(new java.awt.Color(253, 165, 58));
+        buttonIrAIniciarSesion.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonIrAIniciarSesion.setForeground(new java.awt.Color(153, 66, 0));
+        buttonIrAIniciarSesion.setText("Iniciar Sesión");
+        buttonIrAIniciarSesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonIrAIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonIrAIniciarSesionActionPerformed(evt);
+            }
+        });
+
+        buttonCancelar.setBackground(new java.awt.Color(253, 165, 58));
+        buttonCancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonCancelar.setForeground(new java.awt.Color(153, 66, 0));
+        buttonCancelar.setText("Cancelar");
+        buttonCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelarActionPerformed(evt);
+            }
+        });
+
+        buttonCrearUsuario.setBackground(new java.awt.Color(253, 165, 58));
+        buttonCrearUsuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonCrearUsuario.setForeground(new java.awt.Color(153, 66, 0));
+        buttonCrearUsuario.setText("Crear Usuario");
+        buttonCrearUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCrearUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(319, 319, 319))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jCheckBox1)
-                                .addGap(91, 91, 91)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(checkSesionIniciada)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(textFieldUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                        .addComponent(jLabel3)
+                                        .addComponent(textFieldContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                        .addComponent(comboBoxRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel6)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel7)
+                                        .addComponent(textFieldRepetirContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botonSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(jLabel1))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(40, 102, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(buttonIrAIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(34, 34, 34))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,28 +224,34 @@ public class CrearUsuario extends javax.swing.JDialog {
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textFieldContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textFieldRepetirContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboBoxRol, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(checkSesionIniciada)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(139, Short.MAX_VALUE))
+                    .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonIrAIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,45 +268,63 @@ public class CrearUsuario extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+    private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_botonSalirActionPerformed
+    }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
-    private void botonSeguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguroActionPerformed
+    private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
         // TODO add your handling code here:
         dispose();
         PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
         menus.setVisible(true);
-    }//GEN-LAST:event_botonSeguroActionPerformed
+    }//GEN-LAST:event_buttonCancelarActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textFieldContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenyaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textFieldContrasenyaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textFieldUsuarioActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void checkSesionIniciadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkSesionIniciadaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_checkSesionIniciadaActionPerformed
+
+    private void comboBoxRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxRolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxRolActionPerformed
+
+    private void buttonIrAIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrAIniciarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonIrAIniciarSesionActionPerformed
+
+    private void textFieldRepetirContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldRepetirContrasenyaActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonSalir;
-    private javax.swing.JButton botonSeguro;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton buttonCancelar;
+    private javax.swing.JButton buttonCrearUsuario;
+    private javax.swing.JButton buttonIrAIniciarSesion;
+    private javax.swing.JCheckBox checkSesionIniciada;
+    private javax.swing.JComboBox<String> comboBoxRol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField textFieldContrasenya;
+    private javax.swing.JTextField textFieldRepetirContrasenya;
+    private javax.swing.JTextField textFieldUsuario;
     // End of variables declaration//GEN-END:variables
 }
