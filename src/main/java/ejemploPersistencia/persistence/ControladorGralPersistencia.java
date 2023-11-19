@@ -16,6 +16,9 @@ public class ControladorGralPersistencia {
     public void crearUsuario(Usuario usuario) {
         jpaUsuario.create(usuario);
     }
+    public UsuarioJpaController getJpaUsuario() {
+       return jpaUsuario;
+   }
     
     public void borrarUsuario(int codigo) {
       try{
