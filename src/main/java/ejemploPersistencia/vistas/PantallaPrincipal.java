@@ -14,6 +14,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setSize(380, 625);
         setLocation(600, 100);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     /**

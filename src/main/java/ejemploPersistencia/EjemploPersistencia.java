@@ -29,7 +29,6 @@ public class EjemploPersistencia {
         List<Usuario> usuarios = jpaUsuario.findUsuarioEntities();
 
         for (Usuario usuario : usuarios) {
-            System.out.println("ID: " + usuario.getCodigoUsuario());
             System.out.println("Nombre: " + usuario.getNombre());
             System.out.println("Contraseña: " + usuario.getContraseña());
             System.out.println("Rol: " + usuario.getRol());

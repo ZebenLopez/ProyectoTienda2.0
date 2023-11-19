@@ -11,18 +11,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 /**
  *
  * @author Zeben
  */
 @Entity
-public class Usuario implements Serializable{
+public class Usuario implements Serializable {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private int codigoUsuario;
-    @Basic
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String nombre;
+
+    @Basic
     private String contraseña;
     private String rol;
 
@@ -34,20 +34,12 @@ public class Usuario implements Serializable{
         return rol;
     }
 
-    public int getCodigoUsuario() {
-        return codigoUsuario;
-    }
-
     public String getNombre() {
         return nombre;
     }
 
     public String getContraseña() {
         return contraseña;
-    }
-
-    public void setCodigoUsuario(int codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
     }
 
     public void setNombre(String nombre) {
@@ -59,7 +51,6 @@ public class Usuario implements Serializable{
     }
 
     public Usuario(int codigo, String nombreu, String clave) {
-        this.codigoUsuario = codigo;
         this.nombre = nombreu;
         this.contraseña = clave;
         this.rol = rol;
@@ -67,7 +58,5 @@ public class Usuario implements Serializable{
 
     public Usuario() {
     }
-    
-    
-    
+
 }
