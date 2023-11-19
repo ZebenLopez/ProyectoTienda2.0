@@ -11,53 +11,52 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 /**
  *
  * @author Zeben
  */
 @Entity
-public class Usuario implements Serializable{
+public class Usuario implements Serializable {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private int codigo;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String nombre;
+
     @Basic
-    private String nombreu;
-    private String clave;
+    private String contraseña;
+    private String rol;
 
-    public int getCodigo() {
-        return codigo;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
-    public String getNombreu() {
-        return nombreu;
+    public String getRol() {
+        return rol;
     }
 
-    public String getClave() {
-        return clave;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setNombreu(String nombreu) {
-        this.nombreu = nombreu;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public Usuario(int codigo, String nombreu, String clave) {
-        this.codigo = codigo;
-        this.nombreu = nombreu;
-        this.clave = clave;
+        this.nombre = nombreu;
+        this.contraseña = clave;
+        this.rol = rol;
     }
 
     public Usuario() {
     }
-    
-    
-    
+
 }
