@@ -46,7 +46,7 @@ public class CrearUsuario extends javax.swing.JDialog {
         checkSesionIniciada = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         buttonIrAIniciarSesion = new javax.swing.JButton();
-        buttonCancelar = new javax.swing.JButton();
+        buttonCerrarPrograma = new javax.swing.JButton();
         buttonCrearUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -159,14 +159,14 @@ public class CrearUsuario extends javax.swing.JDialog {
             }
         });
 
-        buttonCancelar.setBackground(new java.awt.Color(253, 165, 58));
-        buttonCancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        buttonCancelar.setForeground(new java.awt.Color(153, 66, 0));
-        buttonCancelar.setText("Cancelar");
-        buttonCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
+        buttonCerrarPrograma.setBackground(new java.awt.Color(253, 165, 58));
+        buttonCerrarPrograma.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonCerrarPrograma.setForeground(new java.awt.Color(153, 66, 0));
+        buttonCerrarPrograma.setText("Cerrar Programa");
+        buttonCerrarPrograma.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonCerrarPrograma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCancelarActionPerformed(evt);
+                buttonCerrarProgramaActionPerformed(evt);
             }
         });
 
@@ -187,12 +187,18 @@ public class CrearUsuario extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(31, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(319, 319, 319))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(buttonIrAIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonCerrarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -207,16 +213,12 @@ public class CrearUsuario extends javax.swing.JDialog {
                                     .addComponent(jLabel6)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7)
-                                        .addComponent(textFieldRepetirContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(buttonIrAIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(textFieldRepetirContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))))
                         .addGap(34, 34, 34))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +250,7 @@ public class CrearUsuario extends javax.swing.JDialog {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCerrarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonIrAIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
@@ -273,12 +275,12 @@ public class CrearUsuario extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
-    private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
+    private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
         // TODO add your handling code here:
         dispose();
         PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
         menus.setVisible(true);
-    }//GEN-LAST:event_buttonCancelarActionPerformed
+    }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
     private void textFieldContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenyaActionPerformed
         // TODO add your handling code here:
@@ -309,7 +311,7 @@ public class CrearUsuario extends javax.swing.JDialog {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonCancelar;
+    private javax.swing.JButton buttonCerrarPrograma;
     private javax.swing.JButton buttonCrearUsuario;
     private javax.swing.JButton buttonIrAIniciarSesion;
     private javax.swing.JCheckBox checkSesionIniciada;
