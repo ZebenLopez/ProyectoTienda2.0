@@ -3,7 +3,6 @@ package ejemploPersistencia.persistence;
 import ejemploPersistencia.models.Usuario;
 import ejemploPersistencia.exceptions.NonexistentEntityException;
 import ejemploPersistencia.models.Pedidos;
-import static ejemploPersistencia.models.Productos_.nombre;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
