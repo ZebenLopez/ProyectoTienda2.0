@@ -22,6 +22,7 @@ public class Validacion {
         boolean validar = false;
         fallos = new AtomicReference<>("");
         comprobarExistenciaUsuariosLogin(usuario, contrasegna);
+//        comprobarRol();
 
         if (!fallos.get().isEmpty()) {
             ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
@@ -36,7 +37,7 @@ public class Validacion {
         boolean validar = false;
         fallos = new AtomicReference<>("");
         comprobarExistenciaUsuariosRegistro(user);
-        comprobarIgualdadContraseña(contrasegna, contrasegnaRepetida);
+        comprobarIgualdadContrasegna(contrasegna, contrasegnaRepetida);
 
         if (!fallos.get().isEmpty()) {
             ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
@@ -45,6 +46,19 @@ public class Validacion {
             validar = true;
         }
         return validar;
+    }
+
+    public String obtenerRol(String userLogin, String contrasegnaLogin) {
+        ControladorGralPersistencia controlador = new ControladorGralPersistencia();
+        UsuarioJpaController jpaUsuario = controlador.getJpaUsuario();
+        Usuario usuario = jpaUsuario.findUsuario(userLogin, contrasegnaLogin);
+
+        if (usuario != null) {
+            return usuario.getRol();
+        } else {
+            System.out.println("Usuario y contraseña no coinciden!");
+            return null;
+        }
     }
 
     //COMPROBAR si usuarios existen
@@ -73,7 +87,7 @@ public class Validacion {
 
     }
 
-    public void comprobarIgualdadContraseña(String contrasegna, String contrasegnaRepetida) {
+    public void comprobarIgualdadContrasegna(String contrasegna, String contrasegnaRepetida) {
         if (!contrasegna.equals(contrasegnaRepetida)) {
             fallos.set(fallos + "\nLas contraseñas no coinciden");
         }
