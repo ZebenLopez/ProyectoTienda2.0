@@ -405,25 +405,153 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
 
     private void buttonElegirBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirBebidaActionPerformed
 //BebidasCalientes
-        int cappuccino = (int) spinnerCappuccino.getValue();
-        int chocolate = (int) spinnerChocolate.getValue();
-        int cortado = (int) spinnerCortado.getValue();
-        int espresso = (int) spinnerEspresso.getValue();
-        int latte = (int) spinnerLatte.getValue();
-        int mocha = (int) spinnerMocha.getValue();
-        int teNegro = (int) spinnerTeNegro.getValue();
-        int teVerde = (int) spinnerTeVerde.getValue();
+
+        if ((int) spinnerCappuccino.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Cappuccino",
+                spinnerCappuccino.getValue(),
+                1.50,
+                ((int) spinnerCappuccino.getValue() *1.50)
+            });
+        }
+
+        if ((int) spinnerChocolate.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Chocolate caliente",
+                spinnerChocolate.getValue(),
+                1.50,
+                ((int) spinnerChocolate.getValue() * 1.50)
+            });
+        }
+
+        if ((int) spinnerCortado.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Cortado",
+                spinnerCortado.getValue(),
+                1.00,
+                ((int) spinnerCortado.getValue() * 1.00)
+            });
+        }
+
+        if ((int) spinnerEspresso.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Espresso",
+                spinnerEspresso.getValue(),
+                0.80,
+                ((int) spinnerEspresso.getValue() * 0.80)
+            });
+        }
+
+        if ((int) spinnerLatte.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Latte",
+                spinnerLatte.getValue(),
+                1.25,
+                ((int) spinnerLatte.getValue() * 1.25)
+            });
+        }
+
+        if ((int) spinnerMocha.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Mocha",
+                spinnerMocha.getValue(),
+                2.00,
+                ((int) spinnerMocha.getValue() * 2.00)
+            });
+        }
+
+        if ((int) spinnerTeNegro.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Té negro",
+                spinnerTeNegro.getValue(),
+                1.10,
+                ((int) spinnerTeNegro.getValue() * 1.10)
+            });
+        }
+
+        if ((int) spinnerTeVerde.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Té verde",
+                spinnerTeVerde.getValue(),
+                1.10,
+                ((int) spinnerTeVerde.getValue() * 1.10)
+            });
+        }
 //BebidasFrias
-        int batido = (int) spinnerBatido.getValue();
-        int cafeHelado = (int) spinnerCafeHelado.getValue();
-        int cacaoLat = (int) spinnerCacaoLat.getValue();
-        int cocaCola = (int) spinnerCocaCola.getValue();
-        int frappe = (int) spinnerFrappe.getValue();
-        int limonada = (int) spinnerLimonada.getValue();
-        int nestea = (int) spinnerNestea.getValue();
-        int teHelado = (int) spinnerTeHelado.getValue();
-    
-    this.setVisible(false);
+        int batidoCantidad = (int) spinnerBatido.getValue();
+        if (batidoCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Batido de frutas",
+                batidoCantidad,
+                2.60,
+                (batidoCantidad * 2.60)
+            });
+        }
+        int cafeHeladoCantidad = (int) spinnerCafeHelado.getValue();
+        if (cafeHeladoCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Café helado",
+                cafeHeladoCantidad,
+                2.95,
+                (cafeHeladoCantidad * 2.95)
+            });
+        }
+        int cacaoLatCantidad = (int) spinnerCacaoLat.getValue();
+        if (cacaoLatCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "CacaoLat",
+                cacaoLatCantidad,
+                2.60,
+                (cacaoLatCantidad * 2.60)
+            });
+        }
+        int cocaColaCantidad = (int) spinnerCocaCola.getValue();
+        if (cocaColaCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Coca-Cola",
+                cocaColaCantidad,
+                1.50,
+                (cocaColaCantidad * 1.50)
+            });
+        }
+        int frappeCantidad = (int) spinnerFrappe.getValue();
+        if (frappeCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Frappé",
+                frappeCantidad,
+                2.75,
+                (frappeCantidad * 2.75)
+            });
+        }
+        int limonadaCantidad = (int) spinnerLimonada.getValue();
+        if (limonadaCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Limonada",
+                limonadaCantidad,
+                2.00,
+                (limonadaCantidad * 2.00)
+            });
+        }
+        int nesteaCantidad = (int) spinnerNestea.getValue();
+        if (nesteaCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Nestea",
+                nesteaCantidad,
+                1.80,
+                (nesteaCantidad * 1.80)
+            });
+        }
+        int teHeladoCantidad = (int) spinnerTeHelado.getValue();
+        if (teHeladoCantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Té helado",
+                teHeladoCantidad,
+                1.20,
+                (teHeladoCantidad * 1.20)
+            });
+        }
+
+        this.setVisible(false);
     }//GEN-LAST:event_buttonElegirBebidaActionPerformed
 
     private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
@@ -445,7 +573,7 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
         spinnerLimonada.setValue(0);
         spinnerNestea.setValue(0);
         spinnerTeHelado.setValue(0);
-    
+
     this.setVisible(false);
     }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 

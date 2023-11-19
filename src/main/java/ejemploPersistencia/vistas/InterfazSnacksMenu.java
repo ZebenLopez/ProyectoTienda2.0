@@ -4,15 +4,12 @@
  */
 package ejemploPersistencia.vistas;
 
-import javax.swing.JFrame;
-import javax.swing.JTable;
-
 /**
  *
  * @author Lorena
  */
 public class InterfazSnacksMenu extends javax.swing.JDialog {
-    private JTable table;
+
     /**
      * Creates new form interfazCocinero
      */
@@ -412,76 +409,140 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Crepes",
                 spinnerCrepes.getValue(),
-                2.50,
-                ((int) spinnerCrepes.getValue() * 2.50)
+                3.50,
+                ((int) spinnerCrepes.getValue() * 3.50)
             });
         }
         if ((int) spinnerCroissant.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Croissant",
                 spinnerCroissant.getValue(),
-                2.00,
-                ((int) spinnerCroissant.getValue() * 2.00)
+                2.20,
+                ((int) spinnerCroissant.getValue() * 2.20)
             });
         }
         if ((int) spinnerDonut.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Donut",
                 spinnerDonut.getValue(),
-                2.50,
-                ((int) spinnerDonut.getValue() * 2.50)
+                1.50,
+                ((int) spinnerDonut.getValue() * 1.50)
             });
         }
         if ((int) spinnerHelado.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Helado",
                 spinnerHelado.getValue(),
-                2.50,
-                ((int) spinnerHelado.getValue() * 2.50)
+                1.80,
+                ((int) spinnerHelado.getValue() * 1.80)
             });
         }
         if ((int) spinnerMagdalena.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Magdalena",
                 spinnerMagdalena.getValue(),
-                2.50,
-                ((int) spinnerMagdalena.getValue() * 2.50)
+                1.50,
+                ((int) spinnerMagdalena.getValue() * 1.50)
             });
         }
         if ((int) spinnerTartaFresa.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tarta de Fresa",
                 spinnerTartaFresa.getValue(),
-                2.50,
-                ((int) spinnerTartaFresa.getValue() * 2.50)
+                1.65,
+                ((int) spinnerTartaFresa.getValue() * 1.65)
             });
         }
         if ((int) spinnerTartaQueso.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tarta de Queso",
                 spinnerTartaQueso.getValue(),
-                2.50,
-                ((int) spinnerTartaQueso.getValue() * 2.50)
+                1.85,
+                ((int) spinnerTartaQueso.getValue() * 1.85)
             });
         }
         if ((int) spinnerTortitas.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tortitas",
                 spinnerTortitas.getValue(),
-                2.50,
-                ((int) spinnerTortitas.getValue() * 2.50)
+                3.50,
+                ((int) spinnerTortitas.getValue() * 3.50)
             });
         }
 
 //SnacksSalados
-        int serrano = (int) spinnerSerrano.getValue();
-        int pata = (int) spinnerPata.getValue();
-        int papas = (int) spinnerPapas.getValue();
-        int pollo = (int) spinnerPollo.getValue();
-        int mixto = (int) spinnerMixto.getValue();
-        int charcuteria = (int) spinnerCharcuteria.getValue();
-        int quesos = (int) spinnerQuesos.getValue();
-        int tortilla = (int) spinnerTortilla.getValue();
+
+                if ((int) spinnerSerrano.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Bocadillo de serrano",
+                spinnerSerrano.getValue(),
+                3.00,
+                ((int) spinnerSerrano.getValue() * 3.00)
+            });
+        }
+                
+                if ((int) spinnerPata.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Bocadillo de pata",
+                spinnerPata.getValue(),
+                2.50,
+                ((int) spinnerPata.getValue() * 2.50)
+            });
+        }
+
+                if ((int) spinnerPapas.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Papas bolsa",
+                spinnerPapas.getValue(),
+                1.00,
+                ((int) spinnerPapas.getValue() * 1.00)
+            });
+        }
+
+                if ((int) spinnerPollo.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Sandwich de pollo",
+                spinnerPollo.getValue(),
+                2.50,
+                ((int) spinnerPollo.getValue() * 2.50)
+            });
+        }
+
+                if ((int) spinnerMixto.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Sandwich mixto",
+                spinnerMixto.getValue(),
+                1.20,
+                ((int) spinnerMixto.getValue() * 1.20)
+            });
+        }
+
+                if ((int) spinnerCharcuteria.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Tabla charcutería",
+                spinnerCharcuteria.getValue(),
+                4.00,
+                ((int) spinnerCharcuteria.getValue() * 4.00)
+            });
+        }
+
+                if ((int) spinnerQuesos.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Tabla quesos",
+                spinnerQuesos.getValue(),
+                3.50,
+                ((int) spinnerQuesos.getValue() * 3.50)
+            });
+        }
+
+                if ((int) spinnerTortilla.getValue() != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                "Tortilla",
+                spinnerTortilla.getValue(),
+                2.00,
+                ((int) spinnerTortilla.getValue() * 2.00)
+            });
+        }
 
 //SanacksDulces
     spinnerCrepes.setValue(0);

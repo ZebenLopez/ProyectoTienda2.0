@@ -151,17 +151,7 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         tablePedido.setForeground(new java.awt.Color(14, 6, 0));
         tablePedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "", "Cantidad ", "Precio Ud. (€)", "Precio Total (€)"

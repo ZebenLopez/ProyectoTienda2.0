@@ -57,11 +57,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
         tablePedidoDesglose.setForeground(new java.awt.Color(14, 6, 0));
         tablePedidoDesglose.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Snack", "Preparando", "Emplatado"
@@ -88,11 +84,6 @@ public class InterfazCocinero extends javax.swing.JDialog {
         listPedidos.setBackground(new java.awt.Color(255, 249, 241));
         listPedidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         listPedidos.setForeground(new java.awt.Color(14, 6, 0));
-        listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listPedidos.setSelectionBackground(new java.awt.Color(254, 254, 249));
         listPedidos.setSelectionForeground(new java.awt.Color(14, 6, 0));
         jScrollPane1.setViewportView(listPedidos);
@@ -230,7 +221,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 835, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
