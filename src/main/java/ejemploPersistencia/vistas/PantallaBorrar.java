@@ -118,7 +118,7 @@ public class PantallaBorrar extends javax.swing.JDialog {
         // TODO add your handling code here:
         ControladorGralModelo borrar = new ControladorGralModelo();
         try {
-            borrar.borrarUsuario(Integer.parseInt(codigo.getText()));
+            borrar.borrarUsuario((nombre.getText()));
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(PantallaBorrar.class.getName()).log(Level.SEVERE, null, ex);
         }
