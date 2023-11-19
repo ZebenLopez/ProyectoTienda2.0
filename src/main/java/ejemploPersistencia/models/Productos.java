@@ -14,6 +14,7 @@ import javax.persistence.Id;
 /**
  *
  * @author Zeben
+ * @authora Lorena
  */
 @Entity
 public class Productos implements Serializable{
