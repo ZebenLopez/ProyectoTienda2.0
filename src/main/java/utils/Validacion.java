@@ -58,11 +58,13 @@ public class Validacion {
 //                fallos.set("Usuario y contraseña no coinciden");
 //            }
 //        }
-        for (Usuario usuario : usuarios){
-            if (!usuario.getNombre().equals(userLogin) 
-                    && !usuario.getContrasegna().equals(contrasegnaLogin)){
-                fallos.set("Usuario y contraseña no coinciden!");
-                System.out.println(usuario);
+        for (Usuario usuario : usuarios) {
+            for (int i = 0; i < usuarios.lastIndexOf(i); i++) {
+                if (!usuario.getNombre().equals(userLogin)
+                        && !usuario.getContrasegna().equals(contrasegnaLogin)) {
+                    fallos.set("Usuario y contraseña no coinciden!");
+                    System.out.println(usuario);
+                }
             }
         }
     }
@@ -71,7 +73,7 @@ public class Validacion {
         ControladorGralPersistencia controlador = new ControladorGralPersistencia();
         UsuarioJpaController jpaUsuario = controlador.getJpaUsuario();
         List<Usuario> usuarios = jpaUsuario.findUsuarioEntities();
-        
+
         for (Usuario usuario : usuarios) {
             if (usuario.getNombre().equals(user)) {
                 fallos.set("El usuario ya existe");
