@@ -17,12 +17,12 @@ public class EjemploPersistencia {
         pantallaPrincipal.setVisible(true);
         
         //CREAR TABLA
-      //ControladorGralPersistencia inicioControlador = new ControladorGralPersistencia();
+//      ControladorGralPersistencia inicioControlador = new ControladorGralPersistencia();
         
       //RELLENAR TABLA
-        //ControladorGralModelo registro = new ControladorGralModelo();
-        //Usuario usuario = new Usuario();
-        //registro.crearUsuario(usuario);
+//        ControladorGralModelo registro = new ControladorGralModelo();
+//        Usuario usuario = new Usuario();
+//        registro.crearUsuario(usuario);
         
         
         //BORRAR TABLA
