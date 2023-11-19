@@ -51,21 +51,12 @@ public class Validacion {
     public void comprobarExistenciaUsuariosLogin(String userLogin, String contrasegnaLogin) {
         ControladorGralPersistencia controlador = new ControladorGralPersistencia();
         UsuarioJpaController jpaUsuarioLogin = controlador.getJpaUsuario();
-        List<Usuario> usuarios = jpaUsuarioLogin.findUsuarioEntities();
+        Usuario usuario = jpaUsuarioLogin.findUsuario(userLogin, contrasegnaLogin);
 
-//        for (Usuario usuario : usuarios) {
-//            if (!usuario.getNombre().equals(user) && !usuario.getContraseña().equals(contrasegna)) {
-//                fallos.set("Usuario y contraseña no coinciden");
-//            }
-//        }
-        for (Usuario usuario : usuarios) {
-            for (int i = 0; i < usuarios.lastIndexOf(i); i++) {
-                if (!usuario.getNombre().equals(userLogin)
-                        && !usuario.getContrasegna().equals(contrasegnaLogin)) {
-                    fallos.set("Usuario y contraseña no coinciden!");
-                    System.out.println(usuario);
-                }
-            }
+        if (usuario != null) {
+            System.out.println("Usuario encontrado: " + usuario.getNombre());
+        } else {
+            fallos.set("Usuario y contraseña no coinciden!");
         }
     }
 
