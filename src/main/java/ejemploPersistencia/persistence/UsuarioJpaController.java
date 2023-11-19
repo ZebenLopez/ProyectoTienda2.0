@@ -8,11 +8,7 @@ import ejemploPersistencia.exceptions.NonexistentEntityException;
 import ejemploPersistencia.models.Usuario;
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -60,7 +56,8 @@ public class UsuarioJpaController implements Serializable {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 String id = usuario.getNombre();
-                if (findUsuario(id) == null) {
+                String id2 = usuario.getContrasegna();
+                if (findUsuario(id, id2) == null) {
                     throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.");
                 }
             }
@@ -117,12 +114,15 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    public Usuario findUsuario(String id) {
+    public Usuario findUsuario(String nombre, String contrasegna) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Usuario.class, id);
-        } finally {
-            em.close();
+            return em.createQuery("SELECT u FROM Usuario u WHERE u.nombre = :nombre AND u.contrasegna = :contrasegna", Usuario.class)
+                    .setParameter("nombre", nombre)
+                    .setParameter("contrasegna", contrasegna)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
         }
     }
 

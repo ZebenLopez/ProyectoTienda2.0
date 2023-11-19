@@ -22,6 +22,7 @@ public class Validacion {
         boolean validar = false;
         fallos = new AtomicReference<>("");
         comprobarExistenciaUsuariosLogin(usuario, contrasegna);
+//        comprobarRol();
 
         if (!fallos.get().isEmpty()) {
             ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
@@ -36,7 +37,7 @@ public class Validacion {
         boolean validar = false;
         fallos = new AtomicReference<>("");
         comprobarExistenciaUsuariosRegistro(user);
-        comprobarIgualdadContraseña(contrasegna, contrasegnaRepetida);
+        comprobarIgualdadContrasegna(contrasegna, contrasegnaRepetida);
 
         if (!fallos.get().isEmpty()) {
             ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
@@ -47,25 +48,29 @@ public class Validacion {
         return validar;
     }
 
+    public String obtenerRol(String userLogin, String contrasegnaLogin) {
+        ControladorGralPersistencia controlador = new ControladorGralPersistencia();
+        UsuarioJpaController jpaUsuario = controlador.getJpaUsuario();
+        Usuario usuario = jpaUsuario.findUsuario(userLogin, contrasegnaLogin);
+
+        if (usuario != null) {
+            return usuario.getRol();
+        } else {
+            System.out.println("Usuario y contraseña no coinciden!");
+            return null;
+        }
+    }
+
     //COMPROBAR si usuarios existen
     public void comprobarExistenciaUsuariosLogin(String userLogin, String contrasegnaLogin) {
         ControladorGralPersistencia controlador = new ControladorGralPersistencia();
         UsuarioJpaController jpaUsuarioLogin = controlador.getJpaUsuario();
-        List<Usuario> usuarios = jpaUsuarioLogin.findUsuarioEntities();
+        Usuario usuario = jpaUsuarioLogin.findUsuario(userLogin, contrasegnaLogin);
 
-//        for (Usuario usuario : usuarios) {
-//            if (!usuario.getNombre().equals(user) && !usuario.getContraseña().equals(contrasegna)) {
-//                fallos.set("Usuario y contraseña no coinciden");
-//            }
-//        }
-        for (Usuario usuario : usuarios) {
-            for (int i = 0; i < usuarios.lastIndexOf(i); i++) {
-                if (!usuario.getNombre().equals(userLogin)
-                        && !usuario.getContrasegna().equals(contrasegnaLogin)) {
-                    fallos.set("Usuario y contraseña no coinciden!");
-                    System.out.println(usuario);
-                }
-            }
+        if (usuario != null) {
+            System.out.println("Usuario encontrado: " + usuario.getNombre());
+        } else {
+            fallos.set("Usuario y contraseña no coinciden!");
         }
     }
 
@@ -82,7 +87,7 @@ public class Validacion {
 
     }
 
-    public void comprobarIgualdadContraseña(String contrasegna, String contrasegnaRepetida) {
+    public void comprobarIgualdadContrasegna(String contrasegna, String contrasegnaRepetida) {
         if (!contrasegna.equals(contrasegnaRepetida)) {
             fallos.set(fallos + "\nLas contraseñas no coinciden");
         }

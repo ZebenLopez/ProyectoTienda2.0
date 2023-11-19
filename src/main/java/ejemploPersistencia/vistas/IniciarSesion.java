@@ -7,6 +7,8 @@ package ejemploPersistencia.vistas;
 import javax.swing.JFrame;
 import utils.Validacion;
 
+import java.util.Objects;
+
 /**
  *
  * @author Zeben
@@ -219,9 +221,18 @@ public class IniciarSesion extends javax.swing.JDialog {
     private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
         if (validacion.validarLogin(textFieldUsuario.getText(), textFieldContrasenya.getText())) {
-            dispose();
-            PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
-            menus.setVisible(true);
+            if (Objects.equals(validacion.obtenerRol(textFieldUsuario.getText(), textFieldContrasenya.getText()), "Camarero/a")){
+                dispose();
+                InterfazPrincipalCamarero camarero = new InterfazPrincipalCamarero((JFrame) this.getParent(), true);
+                camarero.setVisible(true);
+            } else {
+                dispose();
+                InterfazCocinero cocinero = new InterfazCocinero((JFrame) this.getParent(), true);
+                cocinero.setVisible(true);
+            }
+//            dispose();
+//            PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
+//            menus.setVisible(true);
         }
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
