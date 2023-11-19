@@ -17,7 +17,7 @@ public class EjemploPersistencia {
         pantallaPrincipal.setVisible(true);
         
         //CREAR TABLA
-      //ControladorGralPersistencia inicioControlador = new ControladorGralPersistencia();
+      ControladorGralPersistencia inicioControlador = new ControladorGralPersistencia();
         
       //RELLENAR TABLA
         //ControladorGralModelo registro = new ControladorGralModelo();

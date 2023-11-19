@@ -20,39 +20,49 @@ import javax.persistence.Id;
 public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int codigo;
+    private int codigoUsuario;
     @Basic
-    private String nombreu;
-    private String clave;
+    private String nombre;
+    private String contraseña;
+    private String rol;
 
-    public int getCodigo() {
-        return codigo;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
-    public String getNombreu() {
-        return nombreu;
+    public String getRol() {
+        return rol;
     }
 
-    public String getClave() {
-        return clave;
+    public int getCodigoUsuario() {
+        return codigoUsuario;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreu(String nombreu) {
-        this.nombreu = nombreu;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setCodigoUsuario(int codigoUsuario) {
+        this.codigoUsuario = codigoUsuario;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public Usuario(int codigo, String nombreu, String clave) {
-        this.codigo = codigo;
-        this.nombreu = nombreu;
-        this.clave = clave;
+        this.codigoUsuario = codigo;
+        this.nombre = nombreu;
+        this.contraseña = clave;
+        this.rol = rol;
     }
 
     public Usuario() {
