@@ -1,10 +1,10 @@
 package ejemploPersistencia;
 
+import ejemploPersistencia.persistence.UsuarioJpaController;
 import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Usuario;
 import ejemploPersistencia.persistence.ControladorGralPersistencia;
 import ejemploPersistencia.exceptions.NonexistentEntityException;
-import ejemploPersistencia.persistence.UsuarioJpaController;
 import ejemploPersistencia.vistas.PantallaPrincipal;
 import java.util.List;
 

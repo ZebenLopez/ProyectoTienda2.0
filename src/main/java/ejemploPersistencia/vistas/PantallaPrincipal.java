@@ -101,9 +101,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
-        IniciarSesion seguro = new IniciarSesion(this, true);
-        seguro.setVisible(true);
+        dispose();
+        IniciarSesion iniciarSesion = new IniciarSesion(this, true);
+        iniciarSesion.setVisible(true);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     /**

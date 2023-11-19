@@ -4,6 +4,8 @@
  */
 package ejemploPersistencia.vistas;
 
+import ejemploPersistencia.models.ControladorGralModelo;
+import ejemploPersistencia.models.Usuario;
 import javax.swing.JFrame;
 
 /**
@@ -272,7 +274,10 @@ public class CrearUsuario extends javax.swing.JDialog {
 
     private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
-        dispose();
+        //Falta control de excepciones para password y no se repita user
+        ControladorGralModelo registroUsuario = new ControladorGralModelo();
+        Usuario usuario = new Usuario(textFieldUsuario.getText(), textFieldContrasenya.getText(), (String) comboBoxRol.getSelectedItem());
+        registroUsuario.crearUsuario(usuario);
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed

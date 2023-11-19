@@ -18,7 +18,7 @@ public class ControladorGralModelo {
         enlaceModeloPersistencia.crearUsuario(usuario);
     }
     
-    public void borrarUsuario(String codigo) throws NonexistentEntityException {
-        enlaceModeloPersistencia.borrarUsuario(codigo);
+    public void borrarUsuario(String nombre) throws NonexistentEntityException {
+        enlaceModeloPersistencia.borrarUsuario(nombre);
     }
 }

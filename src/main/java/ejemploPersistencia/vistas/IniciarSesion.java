@@ -4,13 +4,20 @@
  */
 package ejemploPersistencia.vistas;
 
+import ejemploPersistencia.models.Usuario;
+import ejemploPersistencia.persistence.ControladorGralPersistencia;
+import ejemploPersistencia.persistence.UsuarioJpaController;
+import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import utils.Validacion;
 
 /**
  *
  * @author Zeben
  */
 public class IniciarSesion extends javax.swing.JDialog {
+    Validacion validacion = new Validacion();
 
     /**
      * Creates new form EstasSeguro
@@ -22,6 +29,25 @@ public class IniciarSesion extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }
 
+    //COMPROBAR si usuarios existen
+//    public boolean comprobarExistenciaUsuarios() {
+//        ControladorGralPersistencia controlador = new ControladorGralPersistencia();
+//        UsuarioJpaController jpaUsuario = controlador.getJpaUsuario();
+//        List<Usuario> usuarios = jpaUsuario.findUsuarioEntities();
+//        boolean comprobar = false;
+//
+//        for (Usuario usuario : usuarios) {
+//            System.out.println("Nombre: " + usuario.getNombre());
+//            System.out.println("Contraseña: " + usuario.getContraseña());
+//            System.out.println("Rol: " + usuario.getRol());
+//            if (usuario.getNombre().equals(textFieldUsuario.getText())
+//                    && usuario.getContraseña().equals(textFieldContrasenya.getText())) {
+//                comprobar = true;
+//            }
+//        }
+//        return comprobar;
+//    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -230,14 +256,20 @@ public class IniciarSesion extends javax.swing.JDialog {
 
     private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
-        dispose();
+        if (validacion.validarLogin(textFieldUsuario.getText(), textFieldContrasenya.getText())){
+            dispose();
+            PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
+            menus.setVisible(true);
+        }
+            
+        
+
+
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
         // TODO add your handling code here:
-        dispose();
-        PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
-        menus.setVisible(true);
+        System.exit(0);
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
     private void textFieldContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenyaActionPerformed
@@ -254,6 +286,9 @@ public class IniciarSesion extends javax.swing.JDialog {
 
     private void buttonIrACrearUsusarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrACrearUsusarioActionPerformed
         // TODO add your handling code here:
+        dispose();
+        CrearUsuario crearUsuario = new CrearUsuario((JFrame) this.getParent(), true);
+        crearUsuario.setVisible(true);
     }//GEN-LAST:event_buttonIrACrearUsusarioActionPerformed
 
     /**
