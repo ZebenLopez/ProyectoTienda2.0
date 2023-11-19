@@ -114,7 +114,7 @@ public class PantallaInsertar extends javax.swing.JDialog {
     private void botonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearActionPerformed
         // TODO add your handling code here:
         ControladorGralModelo registro = new ControladorGralModelo();
-        Usuario usuario = new Usuario(Integer.parseInt(textCodigo.getText()), textUser.getText(), textPass.getText());
+        Usuario usuario = new Usuario((textCodigo.getText()), textUser.getText(), textPass.getText());
         registro.crearUsuario(usuario);
         dispose();
         PantallaMenus menu = new PantallaMenus((JFrame)this.getParent(), true);

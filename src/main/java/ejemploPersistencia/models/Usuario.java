@@ -50,7 +50,7 @@ public class Usuario implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public Usuario(int codigo, String nombreu, String clave) {
+    public Usuario(String nombreu, String clave, String rol) {
         this.nombre = nombreu;
         this.contraseña = clave;
         this.rol = rol;
