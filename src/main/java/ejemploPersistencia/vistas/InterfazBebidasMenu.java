@@ -4,8 +4,6 @@
  */
 package ejemploPersistencia.vistas;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author Lorena
@@ -15,7 +13,7 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
     /**
      * Creates new form interfazCocinero
      */
-    public InterfazBebidasMenu(java.awt.Frame parent, boolean modal) {
+    public InterfazBebidasMenu(InterfazPrincipalCamarero parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
