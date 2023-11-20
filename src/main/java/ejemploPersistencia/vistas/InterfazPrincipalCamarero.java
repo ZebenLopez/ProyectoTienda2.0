@@ -6,6 +6,7 @@ package ejemploPersistencia.vistas;
 
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 
 /**
  *
@@ -261,12 +262,12 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
     private void buttonBebidaFriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBebidaFriaActionPerformed
-        InterfazBebidasMenu bebida = new InterfazBebidasMenu((JFrame) this.getParent(), true);
+        InterfazBebidasMenu bebida = new InterfazBebidasMenu(this, true);
         bebida.setVisible(true);
     }//GEN-LAST:event_buttonBebidaFriaActionPerformed
 
     private void buttonSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSnackActionPerformed
-        InterfazSnacksMenu snacks = new InterfazSnacksMenu((JFrame) this.getParent(), true);
+        InterfazSnacksMenu snacks = new InterfazSnacksMenu((Frame) this.getParent(), true);
         snacks.setVisible(true);
     }//GEN-LAST:event_buttonSnackActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
