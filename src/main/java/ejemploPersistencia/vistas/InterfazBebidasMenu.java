@@ -8,6 +8,7 @@ package ejemploPersistencia.vistas;
  *
  * @author Lorena
  */
+//cmenri
 public class InterfazBebidasMenu extends javax.swing.JDialog {
 
     /**
