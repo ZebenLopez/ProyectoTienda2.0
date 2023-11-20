@@ -106,6 +106,38 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             }
         });
 
+        spinnerCrepes.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerCroissant.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerDonut.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerTartaFresa.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerMagdalena.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerHelado.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerTartaQueso.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerTortitas.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerSerrano.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerPata.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerMixto.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerPollo.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerPapas.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerCharcuteria.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerQuesos.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerTortilla.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
         jSeparator1.setBackground(new java.awt.Color(153, 66, 0));
         jSeparator1.setForeground(new java.awt.Color(153, 66, 0));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -471,8 +503,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         }
 
 //SnacksSalados
-
-                if ((int) spinnerSerrano.getValue() != 0) {
+        if ((int) spinnerSerrano.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Bocadillo de serrano",
                 spinnerSerrano.getValue(),
@@ -480,8 +511,8 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
                 ((int) spinnerSerrano.getValue() * 3.00)
             });
         }
-                
-                if ((int) spinnerPata.getValue() != 0) {
+
+        if ((int) spinnerPata.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Bocadillo de pata",
                 spinnerPata.getValue(),
@@ -490,7 +521,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerPapas.getValue() != 0) {
+        if ((int) spinnerPapas.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Papas bolsa",
                 spinnerPapas.getValue(),
@@ -499,7 +530,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerPollo.getValue() != 0) {
+        if ((int) spinnerPollo.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Sandwich de pollo",
                 spinnerPollo.getValue(),
@@ -508,7 +539,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerMixto.getValue() != 0) {
+        if ((int) spinnerMixto.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Sandwich mixto",
                 spinnerMixto.getValue(),
@@ -517,7 +548,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerCharcuteria.getValue() != 0) {
+        if ((int) spinnerCharcuteria.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tabla charcutería",
                 spinnerCharcuteria.getValue(),
@@ -526,7 +557,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerQuesos.getValue() != 0) {
+        if ((int) spinnerQuesos.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tabla quesos",
                 spinnerQuesos.getValue(),
@@ -535,7 +566,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerTortilla.getValue() != 0) {
+        if ((int) spinnerTortilla.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tortilla",
                 spinnerTortilla.getValue(),

@@ -108,6 +108,38 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
             }
         });
 
+        spinnerTeHelado.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerCappuccino.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerChocolate.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerCortado.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerMocha.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerLatte.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerEspresso.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerTeNegro.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerTeVerde.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerBatido.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerCafeHelado.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerCacaoLat.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerCocaCola.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerFrappe.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerLimonada.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerNestea.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
         jSeparator1.setBackground(new java.awt.Color(153, 66, 0));
         jSeparator1.setForeground(new java.awt.Color(153, 66, 0));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
