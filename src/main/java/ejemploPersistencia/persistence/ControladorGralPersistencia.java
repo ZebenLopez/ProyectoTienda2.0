@@ -12,6 +12,7 @@ import java.util.logging.Logger;
  */
 public class ControladorGralPersistencia {
     UsuarioJpaController jpaUsuario = new UsuarioJpaController();
+    PedidosJpaController jpaPedidos = new PedidosJpaController();
 
     public void crearUsuario(Usuario usuario) {
         jpaUsuario.create(usuario);
@@ -29,6 +30,7 @@ public class ControladorGralPersistencia {
     }
     
     public void crearPedido(Pedidos pedidos){
-        PedidosJpaController jpaPedidos = new PedidosJpaController();
+        jpaPedidos.create(pedidos);
     }
+    
 }

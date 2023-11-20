@@ -277,6 +277,7 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
     private void buttonEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEnviarPedidoActionPerformed
         // TODO add your handling code here:
         
+        
     }//GEN-LAST:event_buttonEnviarPedidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
