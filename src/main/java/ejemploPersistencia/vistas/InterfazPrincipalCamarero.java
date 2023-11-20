@@ -135,6 +135,11 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         buttonEnviarPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonEnviarPedido.setText("Enviar Pedido");
         buttonEnviarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonEnviarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEnviarPedidoActionPerformed(evt);
+            }
+        });
 
         buttonSnack.setBackground(new java.awt.Color(253, 165, 58));
         buttonSnack.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -268,6 +273,12 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         InterfazSnacksMenu snacks = new InterfazSnacksMenu((Frame) this.getParent(), true);
         snacks.setVisible(true);
     }//GEN-LAST:event_buttonSnackActionPerformed
+
+    private void buttonEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEnviarPedidoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_buttonEnviarPedidoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBebidaFria;
     private javax.swing.JButton buttonCancelarPedido;
