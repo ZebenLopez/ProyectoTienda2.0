@@ -234,8 +234,6 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private void buttonSalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirSesionActionPerformed
         // TODO add your handling code here:
         dispose();
-        PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
-        menus.setVisible(true);
     }//GEN-LAST:event_buttonSalirSesionActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed

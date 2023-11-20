@@ -310,8 +310,10 @@ public class CrearUsuario extends javax.swing.JDialog {
     private void buttonIrAIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrAIniciarSesionActionPerformed
         // TODO add your handling code here:
         dispose();
-        IniciarSesion iniciarSesion = new IniciarSesion((Frame) this.getParent(), true);
-        iniciarSesion.setVisible(true);
+        PantallaPrincipal login = new PantallaPrincipal();
+        login.setVisible(true);
+//        IniciarSesion iniciarSesion = new IniciarSesion((Frame) this.getParent(), true);
+//        iniciarSesion.setVisible(true);
     }//GEN-LAST:event_buttonIrAIniciarSesionActionPerformed
 
     private void textFieldRepetirContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaActionPerformed
