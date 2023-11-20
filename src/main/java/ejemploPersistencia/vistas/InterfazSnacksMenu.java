@@ -17,9 +17,22 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
      */
     public InterfazSnacksMenu(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();
+        initComponents();       
     }
 
+    private Object[] pedido;
+    private void agregarProducto(String nombre, int cantidad, double precio) {
+
+        pedido = new Object[]{nombre, cantidad, precio, cantidad * precio};
+        if (cantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                nombre,
+                cantidad,
+                precio,
+                (cantidad * precio)
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -439,6 +452,16 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
 
 //CargarTabla
 //SancksDulces
+
+        agregarProducto("Crepes", (int)spinnerCrepes.getValue(), 3.50);
+        agregarProducto("Croissant", (int)spinnerCroissant.getValue(), 2.20);
+        agregarProducto("Donut", (int)spinnerDonut.getValue(), 1.50);
+        agregarProducto("Helado", (int)spinnerHelado.getValue(), 1.80);
+        agregarProducto("Magdalena", (int)spinnerMagdalena.getValue(), 1.50);
+        agregarProducto("Tarta de Fresa", (int)spinnerTartaFresa.getValue(), 1.65);
+        agregarProducto("Tarta de Queso", (int)spinnerTartaQueso.getValue(), 1.85);
+        agregarProducto("Tortitas", (int)spinnerTortitas.getValue(), 3.50);
+        
         if ((int) spinnerCrepes.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Crepes",
@@ -577,7 +600,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
                 ((int) spinnerTortilla.getValue() * 2.00)
             });
         }
-
+                
 //SanacksDulces
     spinnerCrepes.setValue(0);
     spinnerCroissant.setValue(0);

@@ -4,17 +4,16 @@
  */
 package ejemploPersistencia.vistas;
 
-import javax.swing.JFrame;
+
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-
 /**
  *
  * @author Lorena
  */
 public class InterfazPrincipalCamarero extends javax.swing.JDialog {
-
-   
+    
+    public static DefaultTableModel tableModel;
     /**
      * Creates new form interfazCocinero
      */
@@ -23,10 +22,14 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         initComponents();
     }
     
-    public static void AddRowJTable(Object[] dataRow){
-    DefaultTableModel tableModel = (DefaultTableModel) tablePedido.getModel();
-    tableModel.addRow(dataRow);
+
+
+    public static void AddRowJTable(Object[] dataRow) {
+        tableModel = (DefaultTableModel) tablePedido.getModel();
+        tableModel.addRow(dataRow);     
     }
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -276,8 +279,8 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
 
     private void buttonEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEnviarPedidoActionPerformed
         // TODO add your handling code here:
-        
-        
+
+
     }//GEN-LAST:event_buttonEnviarPedidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
