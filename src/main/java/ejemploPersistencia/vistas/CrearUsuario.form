@@ -74,10 +74,10 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="buttonIrAIniciarSesion" min="-2" pref="120" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="74" max="32767" attributes="0"/>
+                          <EmptySpace pref="34" max="32767" attributes="0"/>
                           <Component id="buttonCerrarPrograma" min="-2" pref="133" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="buttonCrearUsuario" min="-2" pref="128" max="-2" attributes="0"/>
@@ -416,7 +416,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel8"/>
+            <Property name="text" type="java.lang.String" value="LORENAAAAA"/>
           </Properties>
         </Component>
       </SubComponents>
