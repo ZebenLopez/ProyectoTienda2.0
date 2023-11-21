@@ -6,8 +6,6 @@ package ejemploPersistencia.vistas;
 
 import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Usuario;
-import java.awt.Frame;
-import javax.swing.JFrame;
 import utils.Validacion;
 //Lorena me va a volver loco
 
@@ -15,14 +13,14 @@ import utils.Validacion;
  *
  * @author Zeben
  */
-public class CrearUsuario extends javax.swing.JDialog {
+public class CrearUsuarioo extends javax.swing.JDialog {
 
     Validacion validacion = new Validacion();
 //hola
     /**
      * Creates new form EstasSeguro
      */
-    public CrearUsuario(java.awt.Frame parent, boolean modal) {
+    public CrearUsuarioo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         getContentPane().setBackground(new java.awt.Color(204, 102, 255));  //color del background

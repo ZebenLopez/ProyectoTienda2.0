@@ -252,7 +252,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void buttonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInicioSesionActionPerformed
         // TODO add your handling code here:
         dispose();
-        CrearUsuario crearUsuario = new CrearUsuario((JFrame) this.getParent(), true);
+        CrearUsuarioo crearUsuario = new CrearUsuarioo((JFrame) this.getParent(), true);
         crearUsuario.setVisible(true);
     }//GEN-LAST:event_buttonInicioSesionActionPerformed
 
