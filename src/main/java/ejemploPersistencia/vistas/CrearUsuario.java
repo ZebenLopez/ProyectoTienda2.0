@@ -26,6 +26,7 @@ public class CrearUsuario extends javax.swing.JDialog {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(204, 102, 255));  //color del background
         setLocationRelativeTo(null);
+        System.out.println("Lorena me va a volver loco");
     }
 
     /**
