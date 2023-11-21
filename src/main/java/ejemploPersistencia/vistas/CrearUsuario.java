@@ -17,7 +17,7 @@ import utils.Validacion;
 public class CrearUsuario extends javax.swing.JDialog {
 
     Validacion validacion = new Validacion();
-
+//hola
     /**
      * Creates new form EstasSeguro
      */
