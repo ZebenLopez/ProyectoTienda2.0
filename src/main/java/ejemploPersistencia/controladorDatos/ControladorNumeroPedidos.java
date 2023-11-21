@@ -27,13 +27,13 @@ public class ControladorNumeroPedidos {
         return new ArrayList<>(numeros);
     }
 
-    public List<Pedidos> listaPedidos(int codigoProducto) {
-        System.out.println("Buscando pedidos con codigoProducto: " + codigoProducto);
+    public List<Pedidos> listaPedidos(int codigoPedido) {
+        System.out.println("Buscando pedidos con codigoProducto: " + codigoPedido);
         System.out.println("Número de pedidos disponibles: " + pedidos.size());
 
         List<Pedidos> listaPedidos = new ArrayList<>();
         for (Pedidos pedido : pedidos) {
-            if (pedido.getNumeroPedido() == codigoProducto) {
+            if (pedido.getNumeroPedido() == codigoPedido) {
                 listaPedidos.add(pedido);
             }
         }
