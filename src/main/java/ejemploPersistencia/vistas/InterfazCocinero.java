@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class InterfazCocinero extends javax.swing.JDialog {
     ControladorNumeroPedidos controladorNumeroPedidos = new ControladorNumeroPedidos();
+    PedidosJpaController jpaPedidos = new PedidosJpaController();
+    List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
 
 
     /**
@@ -276,9 +278,10 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
     private void buttonElegirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirPedidoActionPerformed
         // TODO add your handling code here:
-        PedidosJpaController jpaPedidos = new PedidosJpaController();
+
         jpaPedidos.findPedidosEntities();
-        List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
+
+        //mostrar los pedidos por pantalla
         for (Pedidos pedido : pedidos) {
             System.out.println("Numero Pedido: " + pedido.getNumeroPedido());
             System.out.println("Codigo Producto: " + pedido.getCodigoProducto());
