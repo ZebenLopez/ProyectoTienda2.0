@@ -112,7 +112,7 @@ public class CrearUsuario extends javax.swing.JDialog {
         textFieldContrasenya.setBackground(new java.awt.Color(255, 249, 241));
         textFieldContrasenya.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
-        textFieldContrasenya.setText("Escribe aqui tu contraseña");
+        textFieldContrasenya.setText("Escribe aquí tu contraseña");
         textFieldContrasenya.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         textFieldContrasenya.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -165,6 +165,7 @@ public class CrearUsuario extends javax.swing.JDialog {
             }
         });
 
+        checkSesionIniciada.setBackground(new java.awt.Color(89, 38, 0));
         checkSesionIniciada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkSesionIniciada.setForeground(new java.awt.Color(253, 165, 58));
         checkSesionIniciada.setText("Mantener sesión Iniciada");
@@ -354,26 +355,26 @@ public class CrearUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_textFieldUsuarioFocusLost
 
     private void textFieldContrasenyaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldContrasenyaFocusGained
-        if (textFieldUsuario.getText().equals("Escribe aqui tu contraseña")){
-            textFieldUsuario.setText("");
+        if (textFieldContrasenya.getText().equals("Escribe aquí tu contraseña")){
+            textFieldContrasenya.setText("");
         }
     }//GEN-LAST:event_textFieldContrasenyaFocusGained
 
     private void textFieldContrasenyaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldContrasenyaFocusLost
-        if (textFieldUsuario.getText().isBlank()){
-            textFieldUsuario.setText("Escribe aqui tu contraseña");
+        if (textFieldContrasenya.getText().isBlank()){
+            textFieldContrasenya.setText("Escribe aquí tu contraseña");
         }
     }//GEN-LAST:event_textFieldContrasenyaFocusLost
 
     private void textFieldRepetirContrasenyaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaFocusGained
-        if (textFieldUsuario.getText().equals("Repite aquí tu contraseña")){
-            textFieldUsuario.setText("");
+        if (textFieldRepetirContrasenya.getText().equals("Repite aquí tu contraseña")){
+            textFieldRepetirContrasenya.setText("");
         }
     }//GEN-LAST:event_textFieldRepetirContrasenyaFocusGained
 
     private void textFieldRepetirContrasenyaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaFocusLost
-        if (textFieldUsuario.getText().isBlank()){
-            textFieldUsuario.setText("Repite aquí tu contraseña");
+        if (textFieldRepetirContrasenya.getText().isBlank()){
+            textFieldRepetirContrasenya.setText("Repite aquí tu contraseña");
         }
     }//GEN-LAST:event_textFieldRepetirContrasenyaFocusLost
 

@@ -26,6 +26,8 @@ public class Validacion {
 
         if (!fallos.get().isEmpty()) {
             ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
+        } else {
+            validar = true;
         }
         return validar;
     }
