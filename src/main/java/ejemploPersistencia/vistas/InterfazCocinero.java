@@ -9,6 +9,7 @@ import ejemploPersistencia.models.Pedidos;
 import ejemploPersistencia.persistence.PedidosJpaController;
 
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
 /**
@@ -27,7 +28,6 @@ public class InterfazCocinero extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-
     }
 
     /**
@@ -56,6 +56,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
         buttonVerPedido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(89, 38, 0));
 
@@ -193,6 +194,11 @@ public class InterfazCocinero extends javax.swing.JDialog {
         buttonVerPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonVerPedido.setText("Actualizar Lista");
         buttonVerPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonVerPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVerPedidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -282,24 +288,28 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
     private void buttonElegirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirPedidoActionPerformed
         // TODO add your handling code here:
-        PedidosJpaController jpaPedidos = new PedidosJpaController();
-        jpaPedidos.findPedidosEntities();
-        List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
-        for (Pedidos pedido : pedidos) {
-            System.out.println("Numero Pedido: " + pedido.getNumeroPedido());
-            System.out.println("Codigo Producto: " + pedido.getCodigoProducto());
-            System.out.println("Snack: " + pedido.getSnack());
-            System.out.println("Cantidad: " + pedido.getCantidad());
+
+        try {
+            List<Pedidos> pedidos = controladorNumeroPedidos.listaPedidos(Integer.parseInt(listPedidos.getSelectedValue()));
+            DefaultTableModel tableModel = new DefaultTableModel();
+            if (pedidos.isEmpty()) {
+                System.out.println("No hay pedidos");
+            } else {
+                tableModel.addColumn("Número Pedido");
+                tableModel.addColumn("Snack");
+                tableModel.addColumn("Cantidad");
+
+                for (Pedidos pedido : pedidos) {
+                    tableModel.addRow(new Object[]{pedido.getNumeroPedido(), pedido.getSnack(), pedido.getCantidad()});
+                    System.out.println("Pedido: " + pedido.getNumeroPedido() + " " + pedido.getSnack() + " " + pedido.getCantidad());
+                }
+
+                tablePedidoDesglose.setModel(tableModel);
+            }
+        } catch (Exception e) {
+            System.out.println("--> [!] No hay pedido elegido!");
         }
 
-//        for (Pedidos pedido : pedidos) {
-//            int numero = pedido.getNumeroPedido();
-//            listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
-//                String[] strings = { "Pedido Nº " + numero };
-//                public int getSize() { return strings.length; }
-//                public String getElementAt(int i) { return strings[i]; }
-//            });
-//        }
 
 
 
@@ -312,6 +322,15 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private void buttonEntregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntregarPedidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonEntregarPedidoActionPerformed
+
+    private void buttonVerPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVerPedidoActionPerformed
+        // TODO add your handling code here:
+          listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = (String[]) controladorNumeroPedidos.numeroPedidos().toArray(new String[0]);
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+    }//GEN-LAST:event_buttonVerPedidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarPedido;

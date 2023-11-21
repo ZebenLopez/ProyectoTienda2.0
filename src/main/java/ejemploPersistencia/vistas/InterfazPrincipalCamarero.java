@@ -177,7 +177,7 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
 
             },
             new String [] {
-                "", "Cantidad ", "Precio Ud. (€)", "Precio Total (€)"
+                "Producto", "Cantidad ", "Precio Ud. (€)", "Precio Total (€)"
             }
         ) {
             Class[] types = new Class [] {
