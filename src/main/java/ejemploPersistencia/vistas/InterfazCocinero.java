@@ -278,8 +278,8 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private void buttonElegirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirPedidoActionPerformed
         // TODO add your handling code here:
 
-        jpaPedidos.findPedidosEntities();
-
+//        jpaPedidos.findPedidosEntities();
+//        tablePedidoDesglose.setEditingRow();
         //mostrar los pedidos por pantalla
         for (Pedidos pedido : pedidos) {
             System.out.println("Numero Pedido: " + pedido.getNumeroPedido());

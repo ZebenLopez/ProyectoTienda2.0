@@ -28,6 +28,7 @@ public class Pedidos implements Serializable {
     private String snack;
     private int cantidad;
 
+
     public Pedidos(int numeroPedido, int codigoProducto, String snack, int cantidad) {
         this.numeroPedido = numeroPedido;
         this.codigoProducto = codigoProducto;

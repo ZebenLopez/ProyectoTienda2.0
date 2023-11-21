@@ -268,9 +268,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 InterfazCocinero cocinero = new InterfazCocinero((JFrame) this.getParent(), true);
                 cocinero.setVisible(true);
             }
-            //            dispose();
-            //            PantallaMenus menus = new PantallaMenus((JFrame) this.getParent(), true);
-            //            menus.setVisible(true);
         }
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
