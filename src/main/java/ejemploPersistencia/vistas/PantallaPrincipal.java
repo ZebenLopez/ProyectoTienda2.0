@@ -36,12 +36,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         textFieldUsuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        textFieldContrasenya = new javax.swing.JTextField();
         checkSesionIniciada = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         buttonInicioSesion = new javax.swing.JButton();
         buttonCrearUsuario = new javax.swing.JButton();
         buttonCerrarPrograma = new javax.swing.JButton();
+        textFieldContrasenya = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(89, 146, 183));
@@ -79,6 +79,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         textFieldUsuario.setForeground(new java.awt.Color(89, 38, 0));
         textFieldUsuario.setText("Escribe aquí tu usuario");
         textFieldUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        textFieldUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldUsuarioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldUsuarioFocusLost(evt);
+            }
+        });
         textFieldUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 textFieldUsuarioMouseClicked(evt);
@@ -93,22 +101,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 66, 0));
         jLabel5.setText("Contraseña");
-
-        textFieldContrasenya.setBackground(new java.awt.Color(255, 249, 241));
-        textFieldContrasenya.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
-        textFieldContrasenya.setText("Escribe aqui tu contraseña");
-        textFieldContrasenya.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        textFieldContrasenya.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textFieldContrasenyaMouseClicked(evt);
-            }
-        });
-        textFieldContrasenya.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldContrasenyaActionPerformed(evt);
-            }
-        });
 
         checkSesionIniciada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkSesionIniciada.setForeground(new java.awt.Color(253, 165, 58));
@@ -156,6 +148,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        textFieldContrasenya.setBackground(new java.awt.Color(255, 249, 241));
+        textFieldContrasenya.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
+        textFieldContrasenya.setText("jPasswordField1");
+        textFieldContrasenya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldContrasenyaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -168,13 +170,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel5)
                                     .addComponent(checkSesionIniciada)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(textFieldUsuario)
-                                        .addComponent(jLabel3)
-                                        .addComponent(textFieldContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))))
+                                    .addComponent(textFieldUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(textFieldContrasenya)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(buttonCerrarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -202,8 +203,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textFieldContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(textFieldContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
                         .addComponent(checkSesionIniciada)
                         .addGap(138, 138, 138))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -244,14 +245,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldUsuarioActionPerformed
 
-    private void textFieldContrasenyaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldContrasenyaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldContrasenyaMouseClicked
-
-    private void textFieldContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenyaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldContrasenyaActionPerformed
-
     private void checkSesionIniciadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkSesionIniciadaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkSesionIniciadaActionPerformed
@@ -286,6 +279,22 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
 
+    private void textFieldUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldUsuarioFocusGained
+        if (textFieldUsuario.getText().equals("Escribe aquí tu usuario")){
+            textFieldUsuario.setText("");
+        }
+    }//GEN-LAST:event_textFieldUsuarioFocusGained
+
+    private void textFieldUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldUsuarioFocusLost
+        if (textFieldUsuario.getText().isBlank()){
+            textFieldUsuario.setText("Escribe aquí tu usuario");
+        }
+    }//GEN-LAST:event_textFieldUsuarioFocusLost
+
+    private void textFieldContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenyaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldContrasenyaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -302,7 +311,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField textFieldContrasenya;
+    private javax.swing.JPasswordField textFieldContrasenya;
     private javax.swing.JTextField textFieldUsuario;
     // End of variables declaration//GEN-END:variables
 }

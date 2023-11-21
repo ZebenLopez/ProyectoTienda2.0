@@ -89,6 +89,7 @@ public class CrearUsuario extends javax.swing.JDialog {
         textFieldUsuario.setBackground(new java.awt.Color(255, 249, 241));
         textFieldUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         textFieldUsuario.setForeground(new java.awt.Color(89, 38, 0));
+        textFieldUsuario.setText("Escribe aquí tu usuario");
         textFieldUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         textFieldUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -113,6 +114,14 @@ public class CrearUsuario extends javax.swing.JDialog {
         textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
         textFieldContrasenya.setText("Escribe aqui tu contraseña");
         textFieldContrasenya.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        textFieldContrasenya.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldContrasenyaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldContrasenyaFocusLost(evt);
+            }
+        });
         textFieldContrasenya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldContrasenyaActionPerformed(evt);
@@ -128,6 +137,14 @@ public class CrearUsuario extends javax.swing.JDialog {
         textFieldRepetirContrasenya.setForeground(new java.awt.Color(89, 38, 0));
         textFieldRepetirContrasenya.setText("Repite aquí tu contraseña");
         textFieldRepetirContrasenya.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        textFieldRepetirContrasenya.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldRepetirContrasenyaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldRepetirContrasenyaFocusLost(evt);
+            }
+        });
         textFieldRepetirContrasenya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldRepetirContrasenyaActionPerformed(evt);
@@ -201,33 +218,30 @@ public class CrearUsuario extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(buttonIrAIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonCerrarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(checkSesionIniciada)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(textFieldUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                        .addComponent(jLabel3)
-                                        .addComponent(textFieldContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                        .addComponent(comboBoxRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel6)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addComponent(textFieldRepetirContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))))
-                        .addGap(34, 34, 34))))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(checkSesionIniciada)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(textFieldUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                .addComponent(jLabel3)
+                                .addComponent(textFieldContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                .addComponent(comboBoxRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel6)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel7)
+                                .addComponent(textFieldRepetirContrasenya, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(buttonIrAIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonCerrarPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(jLabel1)
@@ -328,7 +342,6 @@ public class CrearUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_textFieldRepetirContrasenyaActionPerformed
 
     private void textFieldUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldUsuarioFocusGained
-
         if (textFieldUsuario.getText().equals("Escribe aquí tu usuario")){
             textFieldUsuario.setText("");
         }
@@ -339,6 +352,30 @@ public class CrearUsuario extends javax.swing.JDialog {
             textFieldUsuario.setText("Escribe aquí tu usuario");
         }
     }//GEN-LAST:event_textFieldUsuarioFocusLost
+
+    private void textFieldContrasenyaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldContrasenyaFocusGained
+        if (textFieldUsuario.getText().equals("Escribe aqui tu contraseña")){
+            textFieldUsuario.setText("");
+        }
+    }//GEN-LAST:event_textFieldContrasenyaFocusGained
+
+    private void textFieldContrasenyaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldContrasenyaFocusLost
+        if (textFieldUsuario.getText().isBlank()){
+            textFieldUsuario.setText("Escribe aqui tu contraseña");
+        }
+    }//GEN-LAST:event_textFieldContrasenyaFocusLost
+
+    private void textFieldRepetirContrasenyaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaFocusGained
+        if (textFieldUsuario.getText().equals("Repite aquí tu contraseña")){
+            textFieldUsuario.setText("");
+        }
+    }//GEN-LAST:event_textFieldRepetirContrasenyaFocusGained
+
+    private void textFieldRepetirContrasenyaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaFocusLost
+        if (textFieldUsuario.getText().isBlank()){
+            textFieldUsuario.setText("Repite aquí tu contraseña");
+        }
+    }//GEN-LAST:event_textFieldRepetirContrasenyaFocusLost
 
     /**
      * @param args the command line arguments
