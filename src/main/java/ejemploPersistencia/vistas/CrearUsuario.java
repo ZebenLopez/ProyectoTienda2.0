@@ -89,8 +89,15 @@ public class CrearUsuario extends javax.swing.JDialog {
         textFieldUsuario.setBackground(new java.awt.Color(255, 249, 241));
         textFieldUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         textFieldUsuario.setForeground(new java.awt.Color(89, 38, 0));
-        textFieldUsuario.setText("Escribe aquí tu usuario");
         textFieldUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        textFieldUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldUsuarioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldUsuarioFocusLost(evt);
+            }
+        });
         textFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldUsuarioActionPerformed(evt);
@@ -319,6 +326,19 @@ public class CrearUsuario extends javax.swing.JDialog {
     private void textFieldRepetirContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldRepetirContrasenyaActionPerformed
+
+    private void textFieldUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldUsuarioFocusGained
+
+        if (textFieldUsuario.getText().equals("Escribe aquí tu usuario")){
+            textFieldUsuario.setText("");
+        }
+    }//GEN-LAST:event_textFieldUsuarioFocusGained
+
+    private void textFieldUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldUsuarioFocusLost
+        if (textFieldUsuario.getText().isBlank()){
+            textFieldUsuario.setText("Escribe aquí tu usuario");
+        }
+    }//GEN-LAST:event_textFieldUsuarioFocusLost
 
     /**
      * @param args the command line arguments
