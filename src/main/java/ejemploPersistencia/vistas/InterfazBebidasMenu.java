@@ -592,10 +592,6 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
 
     private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
         dispose();
-        InterfazPrincipalCamarero camarero = new InterfazPrincipalCamarero((Frame) this.getParent(), true);
-        camarero.setVisible(true);
-
-        this.setVisible(false);
     }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
