@@ -45,6 +45,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
         buttonCancelarPedido = new javax.swing.JButton();
         buttonEntregarPedido = new javax.swing.JButton();
         buttonElegirPedido = new javax.swing.JButton();
+        buttonVerPedido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -146,22 +147,28 @@ public class InterfazCocinero extends javax.swing.JDialog {
         );
 
         buttonCancelarPedido.setBackground(new java.awt.Color(253, 165, 58));
-        buttonCancelarPedido.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonCancelarPedido.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         buttonCancelarPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonCancelarPedido.setText("Cancelar Pedido");
         buttonCancelarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         buttonEntregarPedido.setBackground(new java.awt.Color(253, 165, 58));
-        buttonEntregarPedido.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonEntregarPedido.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         buttonEntregarPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonEntregarPedido.setText("Entregar Pedido");
         buttonEntregarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         buttonElegirPedido.setBackground(new java.awt.Color(253, 165, 58));
-        buttonElegirPedido.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        buttonElegirPedido.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         buttonElegirPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonElegirPedido.setText("Elegir Pedido");
         buttonElegirPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        buttonVerPedido.setBackground(new java.awt.Color(253, 165, 58));
+        buttonVerPedido.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        buttonVerPedido.setForeground(new java.awt.Color(153, 66, 0));
+        buttonVerPedido.setText("Actualizar Lista");
+        buttonVerPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -171,6 +178,8 @@ public class InterfazCocinero extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonVerPedido)
+                        .addGap(18, 18, 18)
                         .addComponent(buttonElegirPedido))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -205,7 +214,9 @@ public class InterfazCocinero extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)
-                        .addComponent(buttonElegirPedido))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonElegirPedido)
+                            .addComponent(buttonVerPedido)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -250,6 +261,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private javax.swing.JButton buttonElegirPedido;
     private javax.swing.JButton buttonEntregarPedido;
     private javax.swing.JButton buttonSalirSesion;
+    private javax.swing.JButton buttonVerPedido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
