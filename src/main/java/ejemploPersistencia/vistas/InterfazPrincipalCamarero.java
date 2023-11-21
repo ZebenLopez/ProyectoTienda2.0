@@ -4,7 +4,7 @@
  */
 package ejemploPersistencia.vistas;
 
-import ejemploPersistencia.controladorTabla.ControladorTabla;
+import ejemploPersistencia.controladorDatos.ControladorTabla;
 import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Pedidos;
 

@@ -4,13 +4,20 @@
  */
 package ejemploPersistencia.vistas;
 
+import ejemploPersistencia.controladorDatos.ControladorNumeroPedidos;
+import ejemploPersistencia.models.Pedidos;
+import ejemploPersistencia.persistence.PedidosJpaController;
+
 import javax.swing.JFrame;
+import java.util.List;
 
 /**
  *
  * @author Lorena
  */
 public class InterfazCocinero extends javax.swing.JDialog {
+    ControladorNumeroPedidos controladorNumeroPedidos = new ControladorNumeroPedidos();
+
 
     /**
      * Creates new form interfazCocinero
@@ -86,6 +93,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
         listPedidos.setBackground(new java.awt.Color(255, 249, 241));
         listPedidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         listPedidos.setForeground(new java.awt.Color(14, 6, 0));
+        listPedidos.setToolTipText("");
         listPedidos.setSelectionBackground(new java.awt.Color(254, 254, 249));
         listPedidos.setSelectionForeground(new java.awt.Color(14, 6, 0));
         jScrollPane1.setViewportView(listPedidos);
@@ -162,6 +170,11 @@ public class InterfazCocinero extends javax.swing.JDialog {
         buttonElegirPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonElegirPedido.setText("Elegir Pedido");
         buttonElegirPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonElegirPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonElegirPedidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -244,6 +257,32 @@ public class InterfazCocinero extends javax.swing.JDialog {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
+
+    private void buttonElegirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirPedidoActionPerformed
+        // TODO add your handling code here:
+        PedidosJpaController jpaPedidos = new PedidosJpaController();
+        jpaPedidos.findPedidosEntities();
+        List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
+        for (Pedidos pedido : pedidos) {
+            System.out.println("Numero Pedido: " + pedido.getNumeroPedido());
+            System.out.println("Codigo Producto: " + pedido.getCodigoProducto());
+            System.out.println("Snack: " + pedido.getSnack());
+            System.out.println("Cantidad: " + pedido.getCantidad());
+        }
+
+//        for (Pedidos pedido : pedidos) {
+//            int numero = pedido.getNumeroPedido();
+//            listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
+//                String[] strings = { "Pedido Nº " + numero };
+//                public int getSize() { return strings.length; }
+//                public String getElementAt(int i) { return strings[i]; }
+//            });
+//        }
+
+
+
+    }//GEN-LAST:event_buttonElegirPedidoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarPedido;
     private javax.swing.JButton buttonCerrarPrograma;
@@ -256,7 +295,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JList<String> listPedidos;
+    public static javax.swing.JList<String> listPedidos;
     private javax.swing.JScrollPane scrollTablaPedido;
     private javax.swing.JTable tablePedidoDesglose;
     // End of variables declaration//GEN-END:variables

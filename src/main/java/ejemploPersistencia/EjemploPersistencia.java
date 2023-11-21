@@ -27,6 +27,8 @@ public class EjemploPersistencia {
         UsuarioJpaController jpaUsuario = controlador.getJpaUsuario();
         List<Usuario> usuarios = jpaUsuario.findUsuarioEntities();
 
+
+        //Esto es para ver por consola los usuarios y las contraseñas
         for (Usuario usuario : usuarios) {
             System.out.println("Nombre: " + usuario.getNombre());
             System.out.println("Contraseña: " + usuario.getContrasegna());
