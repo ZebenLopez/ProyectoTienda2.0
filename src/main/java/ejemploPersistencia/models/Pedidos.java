@@ -22,6 +22,7 @@ public class Pedidos implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int numeroPedido;
+    @Id
     private int codigoProducto;
     @Basic
     private String snack;

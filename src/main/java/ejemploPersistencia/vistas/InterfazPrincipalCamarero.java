@@ -5,10 +5,12 @@
 package ejemploPersistencia.vistas;
 
 import ejemploPersistencia.controladorTabla.ControladorTabla;
+import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Pedidos;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 /**
@@ -144,7 +146,11 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         buttonEnviarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonEnviarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEnviarPedidoActionPerformed(evt);
+                try {
+                    buttonEnviarPedidoActionPerformed(evt);
+                } catch (NoSuchAlgorithmException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -283,12 +289,17 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         snacks.setVisible(true);
     }//GEN-LAST:event_buttonSnackActionPerformed
 
-    private void buttonEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEnviarPedidoActionPerformed
+    private void buttonEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) throws NoSuchAlgorithmException {//GEN-FIRST:event_buttonEnviarPedidoActionPerformed
         // TODO add your handling code here:
+        ControladorGralModelo controladorGralModelo = new ControladorGralModelo();
+
         ControladorTabla controladorTabla = new ControladorTabla();
         ArrayList pedido = controladorTabla.recorrerTabla();
 
-
+        for (Object pedidos : pedido) {
+            // Supongamos que tu método para insertar pedidos en la base de datos se llama insertarPedido
+            controladorGralModelo.crearPedido((Pedidos) pedidos);
+        }
 
         for (int i = 0; i < pedido.size(); i++) {
             System.out.println(pedido.get(i));
