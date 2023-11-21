@@ -20,7 +20,7 @@ import java.util.List;
 public class InterfazCocinero extends javax.swing.JDialog {
     ControladorNumeroPedidos controladorNumeroPedidos = new ControladorNumeroPedidos();
     PedidosJpaController jpaPedidos = new PedidosJpaController();
-    List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
+//    List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
 
 
     /**
@@ -73,7 +73,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Snack", "Preparando", "Emplatado"
+                "NumeroPedido", "Producto", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
@@ -280,56 +280,19 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private void buttonElegirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirPedidoActionPerformed
         // TODO add your handling code here:
 
-//
-
         List<Pedidos> pedidos = controladorNumeroPedidos.listaPedidos(Integer.parseInt(listPedidos.getSelectedValue()));
-        // Crea un nuevo modelo de tabla
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.addColumn("Numero Pedido");
-        tableModel.addColumn("Codigo Producto");
+
+        tableModel.addColumn("Número Pedido");
         tableModel.addColumn("Snack");
         tableModel.addColumn("Cantidad");
 
-        // Añade los pedidos al modelo de tabla
         for (Pedidos pedido : pedidos) {
-            tableModel.addRow(new Object[] {
-                    pedido.getNumeroPedido(),
-                    pedido.getCodigoProducto(),
-                    pedido.getSnack(),
-                    pedido.getCantidad()
-            });
+            tableModel.addRow(new Object[]{pedido.getNumeroPedido(), pedido.getSnack(), pedido.getCantidad()});
+            System.out.println("Pedido: " + pedido.getNumeroPedido() + " " + pedido.getSnack() + " " + pedido.getCantidad());
         }
 
-        // Asigna el modelo de tabla a la tabla
         tablePedidoDesglose.setModel(tableModel);
-
-        // Añade las columnas al modelo de tabla
-        tableModel.addColumn("Numero Pedido");
-        tableModel.addColumn("Codigo Producto");
-        tableModel.addColumn("Snack");
-        tableModel.addColumn("Cantidad");
-
-        // Añade los pedidos al modelo de tabla
-        for (Pedidos pedido : pedidos) {
-            tableModel.addRow(new Object[] {
-                    pedido.getNumeroPedido(),
-                    pedido.getCodigoProducto(),
-                    pedido.getSnack(),
-                    pedido.getCantidad()
-            });
-        }
-
-        // Asigna el modelo de tabla a la tabla
-        tablePedidoDesglose.setModel(tableModel);
-
-//        tablePedidoDesglose.setEditingRow();
-        //mostrar los pedidos por pantalla
-        for (Pedidos pedido : pedidos) {
-            System.out.println("Numero Pedido: " + pedido.getNumeroPedido());
-            System.out.println("Codigo Producto: " + pedido.getCodigoProducto());
-            System.out.println("Snack: " + pedido.getSnack());
-            System.out.println("Cantidad: " + pedido.getCantidad());
-        }
     }//GEN-LAST:event_buttonElegirPedidoActionPerformed
 
     private void buttonVerPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVerPedidoActionPerformed

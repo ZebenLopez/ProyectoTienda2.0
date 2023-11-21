@@ -1,8 +1,10 @@
 package ejemploPersistencia.controladorDatos;
 
 import ejemploPersistencia.models.Pedidos;
+import ejemploPersistencia.persistence.ControladorGralPersistencia;
 import ejemploPersistencia.persistence.PedidosJpaController;
 
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -26,12 +28,17 @@ public class ControladorNumeroPedidos {
     }
 
     public List<Pedidos> listaPedidos(int codigoProducto) {
+        System.out.println("Buscando pedidos con codigoProducto: " + codigoProducto);
+        System.out.println("Número de pedidos disponibles: " + pedidos.size());
+
         List<Pedidos> listaPedidos = new ArrayList<>();
         for (Pedidos pedido : pedidos) {
-            if (pedido.getCodigoProducto() == codigoProducto) {
+            if (pedido.getNumeroPedido() == codigoProducto) {
                 listaPedidos.add(pedido);
             }
         }
+
+        System.out.println("Número de pedidos encontrados: " + listaPedidos.size());
         return listaPedidos;
     }
 }

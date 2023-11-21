@@ -34,6 +34,8 @@ public class EjemploPersistencia {
             System.out.println("Contraseña: " + usuario.getContrasegna());
             System.out.println("Rol: " + usuario.getRol());
         }
+
+
         //RELLENAR TABLA
         //ControladorGralModelo registro = new ControladorGralModelo();
         //Usuario usuario = new Usuario();

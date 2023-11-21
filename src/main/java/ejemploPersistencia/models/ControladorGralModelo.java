@@ -25,4 +25,8 @@ public class ControladorGralModelo {
     public void crearPedido(Pedidos pedido){
         enlaceModeloPersistencia.crearPedido(pedido);
     }
+
+    public void buscarPedido(int id){
+        enlaceModeloPersistencia.buscarPedido(id);
+    }
 }
