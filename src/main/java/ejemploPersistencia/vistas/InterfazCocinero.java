@@ -182,6 +182,11 @@ public class InterfazCocinero extends javax.swing.JDialog {
         buttonVerPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonVerPedido.setText("Actualizar Lista");
         buttonVerPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonVerPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVerPedidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -281,6 +286,16 @@ public class InterfazCocinero extends javax.swing.JDialog {
             System.out.println("Cantidad: " + pedido.getCantidad());
         }
 
+//        PedidosJpaController jpaPedidos = new PedidosJpaController();
+//        jpaPedidos.findPedidosEntities();
+//        List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
+//        for (Pedidos pedido : pedidos) {
+//            System.out.println("Numero Pedido: " + pedido.getNumeroPedido());
+//            System.out.println("Codigo Producto: " + pedido.getCodigoProducto());
+//            System.out.println("Snack: " + pedido.getSnack());
+//            System.out.println("Cantidad: " + pedido.getCantidad());
+//        }
+
 //        for (Pedidos pedido : pedidos) {
 //            int numero = pedido.getNumeroPedido();
 //            listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
@@ -293,6 +308,16 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
 
     }//GEN-LAST:event_buttonElegirPedidoActionPerformed
+
+    private void buttonVerPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVerPedidoActionPerformed
+        // TODO add your handling code here:
+        listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = (String[]) controladorNumeroPedidos.numeroPedidos().toArray(new String[0]);
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+
+    }//GEN-LAST:event_buttonVerPedidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarPedido;
@@ -307,7 +332,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    public static javax.swing.JList<String> listPedidos;
+    private javax.swing.JList<String> listPedidos;
     private javax.swing.JScrollPane scrollTablaPedido;
     private javax.swing.JTable tablePedidoDesglose;
     // End of variables declaration//GEN-END:variables

@@ -102,7 +102,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(153, 66, 0));
         jLabel5.setText("Contraseña");
 
-        checkSesionIniciada.setBackground(new java.awt.Color(89, 38, 0));
         checkSesionIniciada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkSesionIniciada.setForeground(new java.awt.Color(253, 165, 58));
         checkSesionIniciada.setText("Mantener sesión Iniciada");
@@ -152,6 +151,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         textFieldContrasenya.setBackground(new java.awt.Color(255, 249, 241));
         textFieldContrasenya.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
+        textFieldContrasenya.setText("jPasswordField1");
         textFieldContrasenya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldContrasenyaActionPerformed(evt);
