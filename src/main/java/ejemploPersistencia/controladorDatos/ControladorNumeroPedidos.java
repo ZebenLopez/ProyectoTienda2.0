@@ -24,4 +24,14 @@ public class ControladorNumeroPedidos {
         // Convierte el set a una lista antes de devolverlo
         return new ArrayList<>(numeros);
     }
+
+    public List<Pedidos> listaPedidos(int codigoProducto) {
+        List<Pedidos> listaPedidos = new ArrayList<>();
+        for (Pedidos pedido : pedidos) {
+            if (pedido.getCodigoProducto() == codigoProducto) {
+                listaPedidos.add(pedido);
+            }
+        }
+        return listaPedidos;
+    }
 }
