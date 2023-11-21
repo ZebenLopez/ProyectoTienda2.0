@@ -4,6 +4,8 @@
  */
 package ejemploPersistencia.vistas;
 
+import java.awt.Frame;
+
 /**
  *
  * @author Lorena
@@ -17,6 +19,8 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
     public InterfazBebidasMenu(InterfazPrincipalCamarero parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -436,13 +440,14 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
 
     private void buttonElegirBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirBebidaActionPerformed
 //BebidasCalientes
+        dispose();
 
         if ((int) spinnerCappuccino.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Cappuccino",
                 spinnerCappuccino.getValue(),
                 1.50,
-                ((int) spinnerCappuccino.getValue() *1.50)
+                ((int) spinnerCappuccino.getValue() * 1.50)
             });
         }
 
@@ -586,26 +591,11 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonElegirBebidaActionPerformed
 
     private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
-//BebidasCalientes
-        spinnerCappuccino.setValue(0);
-        spinnerChocolate.setValue(0);
-        spinnerCortado.setValue(0);
-        spinnerEspresso.setValue(0);
-        spinnerLatte.setValue(0);
-        spinnerMocha.setValue(0);
-        spinnerTeNegro.setValue(0);
-        spinnerTeVerde.setValue(0);
-//BebidasFrias
-        spinnerBatido.setValue(0);
-        spinnerCafeHelado.setValue(0);
-        spinnerCacaoLat.setValue(0);
-        spinnerCocaCola.setValue(0);
-        spinnerFrappe.setValue(0);
-        spinnerLimonada.setValue(0);
-        spinnerNestea.setValue(0);
-        spinnerTeHelado.setValue(0);
+        dispose();
+        InterfazPrincipalCamarero camarero = new InterfazPrincipalCamarero((Frame) this.getParent(), true);
+        camarero.setVisible(true);
 
-    this.setVisible(false);
+        this.setVisible(false);
     }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -18,6 +18,8 @@ public class InterfazCocinero extends javax.swing.JDialog {
     public InterfazCocinero(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -234,10 +236,13 @@ public class InterfazCocinero extends javax.swing.JDialog {
     private void buttonSalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirSesionActionPerformed
         // TODO add your handling code here:
         dispose();
+        PantallaPrincipal login = new PantallaPrincipal();
+        login.setVisible(true);
     }//GEN-LAST:event_buttonSalirSesionActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_buttonCerrarProgramaActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarPedido;

@@ -4,31 +4,31 @@
  */
 package ejemploPersistencia.vistas;
 
-
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+
 /**
  *
  * @author Lorena
  */
 public class InterfazPrincipalCamarero extends javax.swing.JDialog {
-    
+
     public static DefaultTableModel tableModel;
+
     /**
      * Creates new form interfazCocinero
      */
     public InterfazPrincipalCamarero(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-    }
-    
+        setLocationRelativeTo(null);
 
+    }
 
     public static void AddRowJTable(Object[] dataRow) {
         tableModel = (DefaultTableModel) tablePedido.getModel();
-        tableModel.addRow(dataRow);     
+        tableModel.addRow(dataRow);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -261,6 +261,8 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
     private void buttonSalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirSesionActionPerformed
         // TODO add your handling code here:
         dispose();
+        PantallaPrincipal login = new PantallaPrincipal();
+        login.setVisible(true);
     }//GEN-LAST:event_buttonSalirSesionActionPerformed
 
     private void buttonCerrarProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarProgramaActionPerformed

@@ -17,10 +17,13 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
      */
     public InterfazSnacksMenu(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();       
+        initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     private Object[] pedido;
+
     private void agregarProducto(String nombre, int cantidad, double precio) {
 
         pedido = new Object[]{nombre, cantidad, precio, cantidad * precio};
@@ -33,6 +36,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -429,39 +433,38 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
 
     private void buttonVaciarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVaciarSnacksActionPerformed
 //SanacksDulces
-    spinnerCrepes.setValue(0);
-    spinnerCroissant.setValue(0);
-    spinnerDonut.setValue(0);
-    spinnerHelado.setValue(0);
-    spinnerMagdalena.setValue(0);
-    spinnerTartaFresa.setValue(0);
-    spinnerTartaQueso.setValue(0);
-    spinnerTortitas.setValue(0);
+        spinnerCrepes.setValue(0);
+        spinnerCroissant.setValue(0);
+        spinnerDonut.setValue(0);
+        spinnerHelado.setValue(0);
+        spinnerMagdalena.setValue(0);
+        spinnerTartaFresa.setValue(0);
+        spinnerTartaQueso.setValue(0);
+        spinnerTortitas.setValue(0);
 //SnacksSalados
-    spinnerSerrano.setValue(0);
-    spinnerPata.setValue(0);
-    spinnerPapas.setValue(0);
-    spinnerPollo.setValue(0);
-    spinnerMixto.setValue(0);
-    spinnerCharcuteria.setValue(0);
-    spinnerQuesos.setValue(0);
-    spinnerTortilla.setValue(0);
+        spinnerSerrano.setValue(0);
+        spinnerPata.setValue(0);
+        spinnerPapas.setValue(0);
+        spinnerPollo.setValue(0);
+        spinnerMixto.setValue(0);
+        spinnerCharcuteria.setValue(0);
+        spinnerQuesos.setValue(0);
+        spinnerTortilla.setValue(0);
     }//GEN-LAST:event_buttonVaciarSnacksActionPerformed
 
     private void buttonElegirSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirSnackActionPerformed
 
 //CargarTabla
 //SancksDulces
+        agregarProducto("Crepes", (int) spinnerCrepes.getValue(), 3.50);
+        agregarProducto("Croissant", (int) spinnerCroissant.getValue(), 2.20);
+        agregarProducto("Donut", (int) spinnerDonut.getValue(), 1.50);
+        agregarProducto("Helado", (int) spinnerHelado.getValue(), 1.80);
+        agregarProducto("Magdalena", (int) spinnerMagdalena.getValue(), 1.50);
+        agregarProducto("Tarta de Fresa", (int) spinnerTartaFresa.getValue(), 1.65);
+        agregarProducto("Tarta de Queso", (int) spinnerTartaQueso.getValue(), 1.85);
+        agregarProducto("Tortitas", (int) spinnerTortitas.getValue(), 3.50);
 
-        agregarProducto("Crepes", (int)spinnerCrepes.getValue(), 3.50);
-        agregarProducto("Croissant", (int)spinnerCroissant.getValue(), 2.20);
-        agregarProducto("Donut", (int)spinnerDonut.getValue(), 1.50);
-        agregarProducto("Helado", (int)spinnerHelado.getValue(), 1.80);
-        agregarProducto("Magdalena", (int)spinnerMagdalena.getValue(), 1.50);
-        agregarProducto("Tarta de Fresa", (int)spinnerTartaFresa.getValue(), 1.65);
-        agregarProducto("Tarta de Queso", (int)spinnerTartaQueso.getValue(), 1.85);
-        agregarProducto("Tortitas", (int)spinnerTortitas.getValue(), 3.50);
-        
         if ((int) spinnerCrepes.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Crepes",
@@ -528,8 +531,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         }
 
 //SnacksSalados
-
-                if ((int) spinnerSerrano.getValue() != 0) {
+        if ((int) spinnerSerrano.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Bocadillo de serrano",
                 spinnerSerrano.getValue(),
@@ -537,8 +539,8 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
                 ((int) spinnerSerrano.getValue() * 3.00)
             });
         }
-                
-                if ((int) spinnerPata.getValue() != 0) {
+
+        if ((int) spinnerPata.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Bocadillo de pata",
                 spinnerPata.getValue(),
@@ -547,7 +549,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerPapas.getValue() != 0) {
+        if ((int) spinnerPapas.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Papas bolsa",
                 spinnerPapas.getValue(),
@@ -556,7 +558,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerPollo.getValue() != 0) {
+        if ((int) spinnerPollo.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Sandwich de pollo",
                 spinnerPollo.getValue(),
@@ -565,7 +567,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerMixto.getValue() != 0) {
+        if ((int) spinnerMixto.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Sandwich mixto",
                 spinnerMixto.getValue(),
@@ -574,7 +576,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerCharcuteria.getValue() != 0) {
+        if ((int) spinnerCharcuteria.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tabla charcutería",
                 spinnerCharcuteria.getValue(),
@@ -583,7 +585,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerQuesos.getValue() != 0) {
+        if ((int) spinnerQuesos.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tabla quesos",
                 spinnerQuesos.getValue(),
@@ -592,7 +594,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
             });
         }
 
-                if ((int) spinnerTortilla.getValue() != 0) {
+        if ((int) spinnerTortilla.getValue() != 0) {
             InterfazPrincipalCamarero.AddRowJTable(new Object[]{
                 "Tortilla",
                 spinnerTortilla.getValue(),
@@ -600,50 +602,50 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
                 ((int) spinnerTortilla.getValue() * 2.00)
             });
         }
-                
+
 //SanacksDulces
-    spinnerCrepes.setValue(0);
-    spinnerCroissant.setValue(0);
-    spinnerDonut.setValue(0);
-    spinnerHelado.setValue(0);
-    spinnerMagdalena.setValue(0);
-    spinnerTartaFresa.setValue(0);
-    spinnerTartaQueso.setValue(0);
-    spinnerTortitas.setValue(0);
+        spinnerCrepes.setValue(0);
+        spinnerCroissant.setValue(0);
+        spinnerDonut.setValue(0);
+        spinnerHelado.setValue(0);
+        spinnerMagdalena.setValue(0);
+        spinnerTartaFresa.setValue(0);
+        spinnerTartaQueso.setValue(0);
+        spinnerTortitas.setValue(0);
 //SnacksSalados
-    spinnerSerrano.setValue(0);
-    spinnerPata.setValue(0);
-    spinnerPapas.setValue(0);
-    spinnerPollo.setValue(0);
-    spinnerMixto.setValue(0);
-    spinnerCharcuteria.setValue(0);
-    spinnerQuesos.setValue(0);
-    spinnerTortilla.setValue(0);
-    
+        spinnerSerrano.setValue(0);
+        spinnerPata.setValue(0);
+        spinnerPapas.setValue(0);
+        spinnerPollo.setValue(0);
+        spinnerMixto.setValue(0);
+        spinnerCharcuteria.setValue(0);
+        spinnerQuesos.setValue(0);
+        spinnerTortilla.setValue(0);
+
 
     }//GEN-LAST:event_buttonElegirSnackActionPerformed
 
     private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
 //SanacksDulces
-    spinnerCrepes.setValue(0);
-    spinnerCroissant.setValue(0);
-    spinnerDonut.setValue(0);
-    spinnerHelado.setValue(0);
-    spinnerMagdalena.setValue(0);
-    spinnerTartaFresa.setValue(0);
-    spinnerTartaQueso.setValue(0);
-    spinnerTortitas.setValue(0);
+        spinnerCrepes.setValue(0);
+        spinnerCroissant.setValue(0);
+        spinnerDonut.setValue(0);
+        spinnerHelado.setValue(0);
+        spinnerMagdalena.setValue(0);
+        spinnerTartaFresa.setValue(0);
+        spinnerTartaQueso.setValue(0);
+        spinnerTortitas.setValue(0);
 //SnacksSalados
-    spinnerSerrano.setValue(0);
-    spinnerPata.setValue(0);
-    spinnerPapas.setValue(0);
-    spinnerPollo.setValue(0);
-    spinnerMixto.setValue(0);
-    spinnerCharcuteria.setValue(0);
-    spinnerQuesos.setValue(0);
-    spinnerTortilla.setValue(0);
-    
-    this.setVisible(false);   
+        spinnerSerrano.setValue(0);
+        spinnerPata.setValue(0);
+        spinnerPapas.setValue(0);
+        spinnerPollo.setValue(0);
+        spinnerMixto.setValue(0);
+        spinnerCharcuteria.setValue(0);
+        spinnerQuesos.setValue(0);
+        spinnerTortilla.setValue(0);
+
+        this.setVisible(false);
     }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
