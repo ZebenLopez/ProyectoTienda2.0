@@ -12,23 +12,18 @@ import java.util.ArrayList;
  * @author loren
  */
 public class ControladorTabla {
-    PantallaPrincipal principal = new PantallaPrincipal();          
-    InterfazPrincipalCamarero camarero = new InterfazPrincipalCamarero(principal,true);
-    Pedidos pedidos = new Pedidos();
-            
+    ArrayList pedido = new ArrayList();
     //int numeroPedido, int codigoProducto, String snack, int cantidad
-    public ArrayList<Pedidos> recorrerTabla(ArrayList<Pedidos> pedid) {
+    public ArrayList<Pedidos> recorrerTabla() {
         
         while (tableModel.getRowCount() != 0) {
             String nombreProducto = (String) tableModel.getValueAt(0, 0);
             int cantidadProducto = (int)  tableModel.getValueAt(0, 1);
             
             Pedidos nuevoPedido = new Pedidos( 2, 3,nombreProducto,cantidadProducto);
-            pedid.add(nuevoPedido);
+            pedido.add(nuevoPedido);
             tableModel.removeRow(0);
         }
-        
-        return pedid;
-        
+        return pedido;
     }
 }

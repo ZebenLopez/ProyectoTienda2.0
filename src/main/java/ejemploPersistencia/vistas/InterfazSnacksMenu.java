@@ -453,7 +453,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonVaciarSnacksActionPerformed
 
     private void buttonElegirSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirSnackActionPerformed
-
+        dispose();
 //CargarTabla
 //SancksDulces
         agregarProducto("Crepes", (int) spinnerCrepes.getValue(), 3.50);
@@ -464,71 +464,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         agregarProducto("Tarta de Fresa", (int) spinnerTartaFresa.getValue(), 1.65);
         agregarProducto("Tarta de Queso", (int) spinnerTartaQueso.getValue(), 1.85);
         agregarProducto("Tortitas", (int) spinnerTortitas.getValue(), 3.50);
-
-        if ((int) spinnerCrepes.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Crepes",
-                spinnerCrepes.getValue(),
-                3.50,
-                ((int) spinnerCrepes.getValue() * 3.50)
-            });
-        }
-        if ((int) spinnerCroissant.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Croissant",
-                spinnerCroissant.getValue(),
-                2.20,
-                ((int) spinnerCroissant.getValue() * 2.20)
-            });
-        }
-        if ((int) spinnerDonut.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Donut",
-                spinnerDonut.getValue(),
-                1.50,
-                ((int) spinnerDonut.getValue() * 1.50)
-            });
-        }
-        if ((int) spinnerHelado.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Helado",
-                spinnerHelado.getValue(),
-                1.80,
-                ((int) spinnerHelado.getValue() * 1.80)
-            });
-        }
-        if ((int) spinnerMagdalena.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Magdalena",
-                spinnerMagdalena.getValue(),
-                1.50,
-                ((int) spinnerMagdalena.getValue() * 1.50)
-            });
-        }
-        if ((int) spinnerTartaFresa.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Tarta de Fresa",
-                spinnerTartaFresa.getValue(),
-                1.65,
-                ((int) spinnerTartaFresa.getValue() * 1.65)
-            });
-        }
-        if ((int) spinnerTartaQueso.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Tarta de Queso",
-                spinnerTartaQueso.getValue(),
-                1.85,
-                ((int) spinnerTartaQueso.getValue() * 1.85)
-            });
-        }
-        if ((int) spinnerTortitas.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Tortitas",
-                spinnerTortitas.getValue(),
-                3.50,
-                ((int) spinnerTortitas.getValue() * 3.50)
-            });
-        }
+        
 
 //SnacksSalados
         if ((int) spinnerSerrano.getValue() != 0) {

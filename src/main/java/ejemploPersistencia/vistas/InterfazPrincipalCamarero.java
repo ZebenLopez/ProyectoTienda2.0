@@ -4,8 +4,12 @@
  */
 package ejemploPersistencia.vistas;
 
+import ejemploPersistencia.controladorTabla.ControladorTabla;
+import ejemploPersistencia.models.Pedidos;
+
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -281,6 +285,14 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
 
     private void buttonEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEnviarPedidoActionPerformed
         // TODO add your handling code here:
+        ControladorTabla controladorTabla = new ControladorTabla();
+        ArrayList pedido = controladorTabla.recorrerTabla();
+
+
+
+        for (int i = 0; i < pedido.size(); i++) {
+            System.out.println(pedido.get(i));
+        }
 
 
     }//GEN-LAST:event_buttonEnviarPedidoActionPerformed
