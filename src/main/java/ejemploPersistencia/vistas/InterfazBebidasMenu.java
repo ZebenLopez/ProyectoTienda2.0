@@ -20,9 +20,24 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
 
     }
 
+        private Object[] pedido;
+
+    private void agregarProducto(String nombre, int cantidad, double precio) {
+
+        pedido = new Object[]{nombre, cantidad, precio, cantidad * precio};
+        if (cantidad != 0) {
+            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
+                nombre,
+                cantidad,
+                precio,
+                (cantidad * precio)
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,6 +90,7 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
         jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(89, 38, 0));
 
@@ -439,159 +455,50 @@ public class InterfazBebidasMenu extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonVaciarBebidaActionPerformed
 
     private void buttonElegirBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirBebidaActionPerformed
-//BebidasCalientes
         dispose();
 
-        if ((int) spinnerCappuccino.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Cappuccino",
-                spinnerCappuccino.getValue(),
-                1.50,
-                ((int) spinnerCappuccino.getValue() * 1.50)
-            });
-        }
+// Bebidas Calientes
+        agregarProducto("Cappuccino", (int) spinnerCappuccino.getValue(), 1.50);
+        agregarProducto("Chocolate caliente", (int) spinnerChocolate.getValue(), 1.50);
+        agregarProducto("Cortado", (int) spinnerCortado.getValue(), 1.00);
+        agregarProducto("Espresso", (int) spinnerEspresso.getValue(), 0.80);
+        agregarProducto("Latte", (int) spinnerLatte.getValue(), 1.25);
+        agregarProducto("Mocha", (int) spinnerMocha.getValue(), 2.00);
+        agregarProducto("Té negro", (int) spinnerTeNegro.getValue(), 1.10);
+        agregarProducto("Té verde", (int) spinnerTeVerde.getValue(), 1.10);
 
-        if ((int) spinnerChocolate.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Chocolate caliente",
-                spinnerChocolate.getValue(),
-                1.50,
-                ((int) spinnerChocolate.getValue() * 1.50)
-            });
-        }
+// Bebidas Frias
+        agregarProducto("Batido de frutas", (int) spinnerBatido.getValue(), 2.60);
+        agregarProducto("Café helado", (int) spinnerCafeHelado.getValue(), 2.95);
+        agregarProducto("CacaoLat", (int) spinnerCacaoLat.getValue(), 2.60);
+        agregarProducto("Coca-Cola", (int) spinnerCocaCola.getValue(), 1.50);
+        agregarProducto("Frappé", (int) spinnerFrappe.getValue(), 2.75);
+        agregarProducto("Limonada", (int) spinnerLimonada.getValue(), 2.00);
+        agregarProducto("Nestea", (int) spinnerNestea.getValue(), 1.80);
+        agregarProducto("Té helado", (int) spinnerTeHelado.getValue(), 1.20);
 
-        if ((int) spinnerCortado.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Cortado",
-                spinnerCortado.getValue(),
-                1.00,
-                ((int) spinnerCortado.getValue() * 1.00)
-            });
-        }
-
-        if ((int) spinnerEspresso.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Espresso",
-                spinnerEspresso.getValue(),
-                0.80,
-                ((int) spinnerEspresso.getValue() * 0.80)
-            });
-        }
-
-        if ((int) spinnerLatte.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Latte",
-                spinnerLatte.getValue(),
-                1.25,
-                ((int) spinnerLatte.getValue() * 1.25)
-            });
-        }
-
-        if ((int) spinnerMocha.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Mocha",
-                spinnerMocha.getValue(),
-                2.00,
-                ((int) spinnerMocha.getValue() * 2.00)
-            });
-        }
-
-        if ((int) spinnerTeNegro.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Té negro",
-                spinnerTeNegro.getValue(),
-                1.10,
-                ((int) spinnerTeNegro.getValue() * 1.10)
-            });
-        }
-
-        if ((int) spinnerTeVerde.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Té verde",
-                spinnerTeVerde.getValue(),
-                1.10,
-                ((int) spinnerTeVerde.getValue() * 1.10)
-            });
-        }
-//BebidasFrias
-        int batidoCantidad = (int) spinnerBatido.getValue();
-        if (batidoCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Batido de frutas",
-                batidoCantidad,
-                2.60,
-                (batidoCantidad * 2.60)
-            });
-        }
-        int cafeHeladoCantidad = (int) spinnerCafeHelado.getValue();
-        if (cafeHeladoCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Café helado",
-                cafeHeladoCantidad,
-                2.95,
-                (cafeHeladoCantidad * 2.95)
-            });
-        }
-        int cacaoLatCantidad = (int) spinnerCacaoLat.getValue();
-        if (cacaoLatCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "CacaoLat",
-                cacaoLatCantidad,
-                2.60,
-                (cacaoLatCantidad * 2.60)
-            });
-        }
-        int cocaColaCantidad = (int) spinnerCocaCola.getValue();
-        if (cocaColaCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Coca-Cola",
-                cocaColaCantidad,
-                1.50,
-                (cocaColaCantidad * 1.50)
-            });
-        }
-        int frappeCantidad = (int) spinnerFrappe.getValue();
-        if (frappeCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Frappé",
-                frappeCantidad,
-                2.75,
-                (frappeCantidad * 2.75)
-            });
-        }
-        int limonadaCantidad = (int) spinnerLimonada.getValue();
-        if (limonadaCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Limonada",
-                limonadaCantidad,
-                2.00,
-                (limonadaCantidad * 2.00)
-            });
-        }
-        int nesteaCantidad = (int) spinnerNestea.getValue();
-        if (nesteaCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Nestea",
-                nesteaCantidad,
-                1.80,
-                (nesteaCantidad * 1.80)
-            });
-        }
-        int teHeladoCantidad = (int) spinnerTeHelado.getValue();
-        if (teHeladoCantidad != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Té helado",
-                teHeladoCantidad,
-                1.20,
-                (teHeladoCantidad * 1.20)
-            });
-        }
-
-        this.setVisible(false);
     }//GEN-LAST:event_buttonElegirBebidaActionPerformed
 
     private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
         dispose();
+        //BebidasCalientes
+        spinnerCappuccino.setValue(0);
+        spinnerChocolate.setValue(0);
+        spinnerCortado.setValue(0);
+        spinnerEspresso.setValue(0);
+        spinnerLatte.setValue(0);
+        spinnerMocha.setValue(0);
+        spinnerTeNegro.setValue(0);
+        spinnerTeVerde.setValue(0);
+//BebidasFrias
+        spinnerBatido.setValue(0);
+        spinnerCafeHelado.setValue(0);
+        spinnerCacaoLat.setValue(0);
+        spinnerCocaCola.setValue(0);
+        spinnerFrappe.setValue(0);
+        spinnerLimonada.setValue(0);
+        spinnerNestea.setValue(0);
+        spinnerTeHelado.setValue(0);
     }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

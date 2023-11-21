@@ -16,6 +16,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
@@ -45,6 +46,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(89, 146, 183));
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(89, 38, 0));
 
@@ -53,8 +55,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Iniciar Sesión");
 
         jPanel2.setBackground(new java.awt.Color(252, 202, 70));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 66, 0), 10));
+        jPanel2.setFocusable(false);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gatoSin FondoGrande.png"))); // NOI18N
+        jLabel2.setFocusable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -62,12 +67,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -102,6 +109,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(153, 66, 0));
         jLabel5.setText("Contraseña");
 
+        checkSesionIniciada.setBackground(new java.awt.Color(89, 38, 0));
         checkSesionIniciada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkSesionIniciada.setForeground(new java.awt.Color(253, 165, 58));
         checkSesionIniciada.setText("Mantener sesión Iniciada");
@@ -151,7 +159,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         textFieldContrasenya.setBackground(new java.awt.Color(255, 249, 241));
         textFieldContrasenya.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         textFieldContrasenya.setForeground(new java.awt.Color(89, 38, 0));
-        textFieldContrasenya.setText("jPasswordField1");
         textFieldContrasenya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldContrasenyaActionPerformed(evt);

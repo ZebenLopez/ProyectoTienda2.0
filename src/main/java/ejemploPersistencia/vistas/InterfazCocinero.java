@@ -9,8 +9,6 @@ import ejemploPersistencia.models.Pedidos;
 import ejemploPersistencia.persistence.PedidosJpaController;
 
 import javax.swing.JFrame;
-import javax.swing.table.DefaultTableModel;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +17,6 @@ import java.util.List;
  */
 public class InterfazCocinero extends javax.swing.JDialog {
     ControladorNumeroPedidos controladorNumeroPedidos = new ControladorNumeroPedidos();
-    PedidosJpaController jpaPedidos = new PedidosJpaController();
-//    List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
 
 
     /**
@@ -30,6 +26,8 @@ public class InterfazCocinero extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
+
     }
 
     /**
@@ -73,7 +71,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
             },
             new String [] {
-                "NumeroPedido", "Producto", "Cantidad"
+                "Snack", "Preparando", "Emplatado"
             }
         ) {
             Class[] types = new Class [] {
@@ -162,12 +160,22 @@ public class InterfazCocinero extends javax.swing.JDialog {
         buttonCancelarPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonCancelarPedido.setText("Cancelar Pedido");
         buttonCancelarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonCancelarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelarPedidoActionPerformed(evt);
+            }
+        });
 
         buttonEntregarPedido.setBackground(new java.awt.Color(253, 165, 58));
         buttonEntregarPedido.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         buttonEntregarPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonEntregarPedido.setText("Entregar Pedido");
         buttonEntregarPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buttonEntregarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEntregarPedidoActionPerformed(evt);
+            }
+        });
 
         buttonElegirPedido.setBackground(new java.awt.Color(253, 165, 58));
         buttonElegirPedido.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
@@ -185,11 +193,6 @@ public class InterfazCocinero extends javax.swing.JDialog {
         buttonVerPedido.setForeground(new java.awt.Color(153, 66, 0));
         buttonVerPedido.setText("Actualizar Lista");
         buttonVerPedido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buttonVerPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonVerPedidoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -279,31 +282,36 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
     private void buttonElegirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonElegirPedidoActionPerformed
         // TODO add your handling code here:
-
-        List<Pedidos> pedidos = controladorNumeroPedidos.listaPedidos(Integer.parseInt(listPedidos.getSelectedValue()));
-        DefaultTableModel tableModel = new DefaultTableModel();
-
-        tableModel.addColumn("Número Pedido");
-        tableModel.addColumn("Snack");
-        tableModel.addColumn("Cantidad");
-
+        PedidosJpaController jpaPedidos = new PedidosJpaController();
+        jpaPedidos.findPedidosEntities();
+        List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
         for (Pedidos pedido : pedidos) {
-            tableModel.addRow(new Object[]{pedido.getNumeroPedido(), pedido.getSnack(), pedido.getCantidad()});
-            System.out.println("Pedido: " + pedido.getNumeroPedido() + " " + pedido.getSnack() + " " + pedido.getCantidad());
+            System.out.println("Numero Pedido: " + pedido.getNumeroPedido());
+            System.out.println("Codigo Producto: " + pedido.getCodigoProducto());
+            System.out.println("Snack: " + pedido.getSnack());
+            System.out.println("Cantidad: " + pedido.getCantidad());
         }
 
-        tablePedidoDesglose.setModel(tableModel);
+//        for (Pedidos pedido : pedidos) {
+//            int numero = pedido.getNumeroPedido();
+//            listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
+//                String[] strings = { "Pedido Nº " + numero };
+//                public int getSize() { return strings.length; }
+//                public String getElementAt(int i) { return strings[i]; }
+//            });
+//        }
+
+
+
     }//GEN-LAST:event_buttonElegirPedidoActionPerformed
 
-    private void buttonVerPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVerPedidoActionPerformed
+    private void buttonCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarPedidoActionPerformed
         // TODO add your handling code here:
-        listPedidos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = (String[]) controladorNumeroPedidos.numeroPedidos().toArray(new String[0]);
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+    }//GEN-LAST:event_buttonCancelarPedidoActionPerformed
 
-    }//GEN-LAST:event_buttonVerPedidoActionPerformed
+    private void buttonEntregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntregarPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonEntregarPedidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarPedido;

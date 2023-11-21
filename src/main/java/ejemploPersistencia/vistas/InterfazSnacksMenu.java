@@ -19,6 +19,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
 
     }
 
@@ -89,6 +90,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(89, 38, 0));
 
@@ -467,77 +469,14 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         
 
 //SnacksSalados
-        if ((int) spinnerSerrano.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Bocadillo de serrano",
-                spinnerSerrano.getValue(),
-                3.00,
-                ((int) spinnerSerrano.getValue() * 3.00)
-            });
-        }
-
-        if ((int) spinnerPata.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Bocadillo de pata",
-                spinnerPata.getValue(),
-                2.50,
-                ((int) spinnerPata.getValue() * 2.50)
-            });
-        }
-
-        if ((int) spinnerPapas.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Papas bolsa",
-                spinnerPapas.getValue(),
-                1.00,
-                ((int) spinnerPapas.getValue() * 1.00)
-            });
-        }
-
-        if ((int) spinnerPollo.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Sandwich de pollo",
-                spinnerPollo.getValue(),
-                2.50,
-                ((int) spinnerPollo.getValue() * 2.50)
-            });
-        }
-
-        if ((int) spinnerMixto.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Sandwich mixto",
-                spinnerMixto.getValue(),
-                1.20,
-                ((int) spinnerMixto.getValue() * 1.20)
-            });
-        }
-
-        if ((int) spinnerCharcuteria.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Tabla charcutería",
-                spinnerCharcuteria.getValue(),
-                4.00,
-                ((int) spinnerCharcuteria.getValue() * 4.00)
-            });
-        }
-
-        if ((int) spinnerQuesos.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Tabla quesos",
-                spinnerQuesos.getValue(),
-                3.50,
-                ((int) spinnerQuesos.getValue() * 3.50)
-            });
-        }
-
-        if ((int) spinnerTortilla.getValue() != 0) {
-            InterfazPrincipalCamarero.AddRowJTable(new Object[]{
-                "Tortilla",
-                spinnerTortilla.getValue(),
-                2.00,
-                ((int) spinnerTortilla.getValue() * 2.00)
-            });
-        }
+        agregarProducto("Bocadillo de serrano", (int) spinnerSerrano.getValue(), 3.00);
+        agregarProducto("Bocadillo de pata", (int) spinnerPata.getValue(), 2.50);
+        agregarProducto("Papas bolsa", (int) spinnerPapas.getValue(), 1.00);
+        agregarProducto("Sandwich de pollo", (int) spinnerPollo.getValue(), 2.50);
+        agregarProducto("Sandwich mixto", (int) spinnerMixto.getValue(), 1.20);
+        agregarProducto("Tabla charcutería", (int) spinnerCharcuteria.getValue(), 4.00);
+        agregarProducto("Tabla quesos", (int) spinnerQuesos.getValue(), 3.50);
+        agregarProducto("Tortilla", (int) spinnerTortilla.getValue(), 2.00);
 
 //SanacksDulces
         spinnerCrepes.setValue(0);
@@ -562,6 +501,7 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonElegirSnackActionPerformed
 
     private void buttonCancelarSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarSnacksActionPerformed
+        dispose();
 //SanacksDulces
         spinnerCrepes.setValue(0);
         spinnerCroissant.setValue(0);
@@ -580,8 +520,6 @@ public class InterfazSnacksMenu extends javax.swing.JDialog {
         spinnerCharcuteria.setValue(0);
         spinnerQuesos.setValue(0);
         spinnerTortilla.setValue(0);
-
-        this.setVisible(false);
     }//GEN-LAST:event_buttonCancelarSnacksActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

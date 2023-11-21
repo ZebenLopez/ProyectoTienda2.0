@@ -12,6 +12,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,6 +30,7 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
 
     }
 
@@ -60,6 +63,7 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         tablePedido = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(89, 38, 0));
 
@@ -69,7 +73,7 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(253, 165, 58));
-        jLabel1.setText("PedidoNº :");
+        jLabel1.setText("Pedido Actual :");
 
         jSeparator1.setBackground(new java.awt.Color(153, 66, 0));
         jSeparator1.setForeground(new java.awt.Color(153, 66, 0));
