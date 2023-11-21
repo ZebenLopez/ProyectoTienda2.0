@@ -26,9 +26,6 @@ public class Validacion {
 
         if (!fallos.get().isEmpty()) {
             ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
-        } else {
-            ValidacionUtils.createJOptionPanel("Inicio de sesión correcto para el usuario " + usuario, "Accediendo", 1);
-            validar = true;
         }
         return validar;
     }
