@@ -1,0 +1,13 @@
+NUMERO PEDIDO: 29980
+---------------------------------------------
+PRODUCTO: Crepes     CANTIDAD: 1   PRECIO INDIVIDUAL: 3,50 € PRECIO TOTAL: 3,50   €
+---------------------------------------------
+PRODUCTO: Croissant  CANTIDAD: 1   PRECIO INDIVIDUAL: 2,20 € PRECIO TOTAL: 2,20   €
+---------------------------------------------
+PRODUCTO: Donut      CANTIDAD: 1   PRECIO INDIVIDUAL: 1,50 € PRECIO TOTAL: 1,50   €
+---------------------------------------------
+PRODUCTO: Helado     CANTIDAD: 1   PRECIO INDIVIDUAL: 1,80 € PRECIO TOTAL: 1,80   €
+---------------------------------------------
+PRODUCTO: Magdalena  CANTIDAD: 2   PRECIO INDIVIDUAL: 1,50 € PRECIO TOTAL: 3,00   €
+---------------------------------------------
+PRECIO FINAL: 12,00€

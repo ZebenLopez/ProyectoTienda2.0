@@ -10,6 +10,11 @@ import utils.Validacion;
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
     Validacion validacion = new Validacion();
+    static String usuario;
+
+    public static String getUsuario() {
+        return usuario;
+    }
 
     /**
      * Creates new form PantallaPrincipal
@@ -265,8 +270,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
+        String rol = "Camarero/a";
         if (validacion.validarLogin(textFieldUsuario.getText(), textFieldContrasenya.getText())) {
-            if (Objects.equals(validacion.obtenerRol(textFieldUsuario.getText(), textFieldContrasenya.getText()), "Camarero/a")){
+            if (Objects.equals(validacion.obtenerRol(textFieldUsuario.getText(), textFieldContrasenya.getText()), rol)){
                 dispose();
                 InterfazPrincipalCamarero camarero = new InterfazPrincipalCamarero((JFrame) this.getParent(), true);
                 camarero.setVisible(true);
@@ -275,6 +281,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 InterfazCocinero cocinero = new InterfazCocinero((JFrame) this.getParent(), true);
                 cocinero.setVisible(true);
             }
+            usuario = textFieldUsuario.getText();
         }
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 

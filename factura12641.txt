@@ -1,0 +1,7 @@
+NUMERO PEDIDO: 12641
+---------------------------------------------
+PRODUCTO: Crepes     CANTIDAD: 3   PRECIO INDIVIDUAL: 3,50   € PRECIO TOTAL: 10,50€
+---------------------------------------------
+PRECIO FINAL: 10,50€
+IGIC: 0,74€
+Le ha atendido null

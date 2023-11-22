@@ -4,16 +4,14 @@
  */
 package ejemploPersistencia.vistas;
 
-import ejemploPersistencia.controladorDatos.ControladorTabla;
+import ejemploPersistencia.controladorDatos.ControladorTablaFactura;
 import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Pedidos;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.*;
 
 /**
  *
@@ -297,18 +295,17 @@ public class InterfazPrincipalCamarero extends javax.swing.JDialog {
         // TODO add your handling code here:
         ControladorGralModelo controladorGralModelo = new ControladorGralModelo();
 
-        ControladorTabla controladorTabla = new ControladorTabla();
-        ArrayList pedido = controladorTabla.recorrerTabla();
+        ControladorTablaFactura controladorTabla = new ControladorTablaFactura();
+        ArrayList<Pedidos> pedido = controladorTabla.recorrerTabla();
 
-        for (Object pedidos : pedido) {
-            // Supongamos que tu método para insertar pedidos en la base de datos se llama insertarPedido
-            controladorGralModelo.crearPedido((Pedidos) pedidos);
+        for (Pedidos pedidos : pedido) {
+            // Insertar pedidos en la base de datos
+            controladorGralModelo.crearPedido(pedidos);
         }
 
-        for (int i = 0; i < pedido.size(); i++) {
-            System.out.println(pedido.get(i));
-        }
 
+        // Generar factura
+        controladorTabla.guardarFactura();
 
     }//GEN-LAST:event_buttonEnviarPedidoActionPerformed
 

@@ -5,12 +5,10 @@
 package ejemploPersistencia.vistas;
 
 import ejemploPersistencia.controladorDatos.ControladorNumeroPedidos;
-import ejemploPersistencia.controladorDatos.ControladorTabla;
+import ejemploPersistencia.controladorDatos.ControladorTablaFactura;
 import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Pedidos;
-import ejemploPersistencia.persistence.PedidosJpaController;
 
-import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
@@ -19,7 +17,7 @@ import java.util.List;
  */
 public class InterfazCocinero extends javax.swing.JDialog {
     ControladorNumeroPedidos controladorNumeroPedidos = new ControladorNumeroPedidos();
-    ControladorTabla controladorTabla = new ControladorTabla();
+    ControladorTablaFactura controladorTabla = new ControladorTablaFactura();
 
 
     /**

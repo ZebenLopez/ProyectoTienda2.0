@@ -24,14 +24,14 @@ public class Pedidos implements Serializable {
     private int codigo;
     @Basic
     private int numeroPedido;
-    private int codigoProducto;
+    private double precioProducto;
     private String snack;
     private int cantidad;
 
-    public Pedidos(int codigo, int numeroPedido, int codigoProducto, String snack, int cantidad) {
+    public Pedidos(int codigo, int numeroPedido, double codigoProducto, String snack, int cantidad) {
         this.codigo = codigo;
         this.numeroPedido = numeroPedido;
-        this.codigoProducto = codigoProducto;
+        this.precioProducto = codigoProducto;
         this.snack = snack;
         this.cantidad = cantidad;
     }
@@ -51,8 +51,8 @@ public class Pedidos implements Serializable {
         return numeroPedido;
     }
 
-    public int getCodigoProducto() {
-        return codigoProducto;
+    public double getPrecioProducto() {
+        return precioProducto;
     }
 
     public String getSnack() {
@@ -67,8 +67,8 @@ public class Pedidos implements Serializable {
         this.numeroPedido = numeroPedido;
     }
 
-    public void setCodigoProducto(int codigoProducto) {
-        this.codigoProducto = codigoProducto;
+    public void setPrecioProducto(double codigoProducto) {
+        this.precioProducto = codigoProducto;
     }
 
     public void setSnack(String snack) {
@@ -81,7 +81,7 @@ public class Pedidos implements Serializable {
 
     @Override
     public String toString() {
-        return "Pedidos{" + "numeroPedido=" + numeroPedido + ", codigoProducto=" + codigoProducto + ", snack=" + snack + ", cantidad=" + cantidad + '}';
+        return "Pedidos{" + "numeroPedido=" + numeroPedido + ", codigoProducto=" + precioProducto + ", snack=" + snack + ", cantidad=" + cantidad + '}';
     }
 
 }

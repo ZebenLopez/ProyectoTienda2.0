@@ -1,0 +1,4 @@
+Número de pedido: 446
+Producto: Crepes   Cantidad: 5   Precio Individual: 3.5€   Precio Subtotal: 17.5€
+---------------------------------------------
+Precio Final: 17.5€
