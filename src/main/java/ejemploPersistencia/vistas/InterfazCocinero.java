@@ -66,7 +66,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
                 },
                 new String[]{
-                        "Número Pedido", "Snack", "Cantidad"
+                        "Número Pedido", "Producto", "Cantidad"
                 }
         ) {
             Class[] types = new Class[]{
@@ -290,7 +290,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
                 System.out.println("No hay pedidos");
             } else {
                 tableModel.addColumn("Número Pedido");
-                tableModel.addColumn("Snack");
+                tableModel.addColumn("Producto");
                 tableModel.addColumn("Cantidad");
 
                 for (Pedidos pedido : pedidos) {
