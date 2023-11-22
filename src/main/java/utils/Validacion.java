@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package utils;
 
-import ejemploPersistencia.models.Pedidos;
 import ejemploPersistencia.models.Usuario;
 import ejemploPersistencia.persistence.ControladorGralPersistencia;
 import ejemploPersistencia.persistence.UsuarioJpaController;
@@ -26,6 +21,8 @@ import static org.eclipse.persistence.jaxb.javamodel.Helper.URL;
 /**
  *
  * @author Zeben
+ * @author Lorena
+ * @version 1.0
  */
 public class Validacion {
 
@@ -33,24 +30,23 @@ public class Validacion {
 
     public boolean validarLogin(String usuario, String contrasegna) {
         boolean validar = false;
-        List<String> fallos = new ArrayList<>();
+        fallos = new AtomicReference<>("");
 
-        // Comprueba si el nombre de usuario solo contiene letras y tiene al menos 4 caracteres
+        // Comprueba si el nombre de usuario solo contiene letras y números
         if (!usuario.matches("^[A-Z]*$")) {
-            fallos.add("El nombre de usuario solo puede contener letras Mayúsculas");
+            fallos.set("El usuario y contraseña no coinciden!");
         } else {
             comprobarExistenciaUsuariosLogin(usuario, contrasegna);
         }
 
-        // Comprueba si la contraseña solo contiene números y tiene entre 5 y 10 caracteres
-        if (!contrasegna.matches("^[0-9]*$") || contrasegna.length() < 5 || contrasegna.length() > 10) {
-            fallos.add("La contraseña solo puede contener números");
+        // Comprueba si la contraseña solo contiene números
+        if (!contrasegna.matches("^[0-9]*$")) {
+            fallos.set("El usuario y contraseña no coinciden!");
         } else {
-            // Aquí puedes agregar más validaciones si es necesario
         }
 
-        if (!fallos.isEmpty()) {
-            ValidacionUtils.createJOptionPanel(String.join("\n", fallos), "Error", 0);
+        if (!fallos.get().isEmpty()) {
+            ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
         } else {
             validar = true;
         }
@@ -59,24 +55,24 @@ public class Validacion {
 
     public boolean validarRegistro(String user, String contrasegna, String contrasegnaRepetida) {
         boolean validar = false;
-        List<String> fallos = new ArrayList<>();
+        fallos = new AtomicReference<>("");
 
-        // Comprueba si el nombre de usuario solo contiene letras y tiene al menos 4 caracteres
-        if (!user.matches("^[A-Z]*$") || user.length() < 4) {
-            fallos.add("El nombre de usuario solo puede contener letras Mayúsculas y debe tener al menos 4 caracteres");
+        // Comprueba si el nombre de usuario solo contiene letras y números
+        if (!user.matches("^[A-Z]*$")) {
+            fallos.set("El nombre de usuario solo puede contener letras Mayúsculas");
         } else {
             comprobarExistenciaUsuariosRegistro(user);
         }
 
-        // Comprueba si la contraseña solo contiene números y tiene entre 5 y 10 caracteres
-        if (!contrasegna.matches("^[0-9]*$") || contrasegna.length() < 5 || contrasegna.length() > 10) {
-            fallos.add("La contraseña solo puede contener números y debe tener entre 5 y 10 caracteres");
-        } else if (!contrasegna.equals(contrasegnaRepetida)) {
-            fallos.add("Las contraseñas no coinciden");
+        // Comprueba si la contraseña solo contiene números
+        if (!contrasegna.matches("^[0-9]*$")) {
+            fallos.set("La contraseña solo puede contener números");
+        } else {
+            comprobarIgualdadContrasegna(contrasegna, contrasegnaRepetida);
         }
 
-        if (!fallos.isEmpty()) {
-            ValidacionUtils.createJOptionPanel(String.join("\n", fallos), "Error", 0);
+        if (!fallos.get().isEmpty()) {
+            ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
         } else {
             ValidacionUtils.createJOptionPanel("Usuario " + user + " registrado con contraseña " + contrasegna, "Registrado", 1);
             validar = true;
@@ -92,6 +88,7 @@ public class Validacion {
         if (usuario != null) {
             return usuario.getRol();
         } else {
+            System.out.println("El usuario y contraseña no coinciden!");
             return null;
         }
     }
@@ -103,6 +100,7 @@ public class Validacion {
         Usuario usuario = jpaUsuarioLogin.findUsuario(userLogin, contrasegnaLogin);
 
         if (usuario != null) {
+            userLogin = usuario.getNombre();
             System.out.println("Usuario encontrado: " + usuario.getNombre());
         } else {
             fallos.set("Usuario y contraseña no coinciden!");
@@ -127,62 +125,4 @@ public class Validacion {
         }
     }
 
-    public void factura(ArrayList pedido) {
-        try (Connection connection = DriverManager.getConnection(URL)) {
-            // Consulta para obtener toda la información de la tabla "cesta"
-            pedido.forEach((producto) -> {
-                String consulta = "SELECT * FROM productos WHERE nombre = '" + producto + "'";
-                try (PreparedStatement statement = connection.prepareStatement(consulta); ResultSet resultSet = statement.executeQuery()) {
-                    // Obtener la ruta completa del archivo
-                    String filePath = "factura.txt";
-                    Path path = Paths.get(filePath).toAbsolutePath();
-                    // Crear un PrintWriter para escribir en un archivo de texto
-                    try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
-                        double total = 0.0;  // Variable para almacenar el resultado total
-                        // Iterar sobre los resultados y escribir en el archivo
-
-                        writer.println("* MULTITIENDA HANAYAMA *");
-                        writer.println("-------------------------------");
-                        while (resultSet.next()) {
-                            String producto1 = resultSet.getString("nombre");
-                            int cantidad = resultSet.getInt("cantidad");
-                            double precio = resultSet.getDouble("precio");
-
-                            // Calcular el subtotal para cada producto
-                            double subtotal = cantidad * precio;
-
-                            // Imprimir en el archivo
-                            writer.println("Producto: " + producto1);
-                            writer.println("Cantidad: " + cantidad);
-                            writer.println("Precio: " + precio);
-                            writer.println("Subtotal: " + subtotal);
-                            writer.println();  // Salto de línea adicional para separar productos
-
-                            // Sumar al resultado total
-                            total += subtotal;
-                        }
-                        // Imprimir el resultado total al final del archivo
-                        writer.println("------------------------------");
-                        writer.println("--> Total: " + total);
-
-                        JOptionPane.showMessageDialog(null, "El ticket ha sido generado y guardado en " + path,
-                                "Generación Exitosa", JOptionPane.INFORMATION_MESSAGE);
-
-                        // Abrir el archivo con la aplicación predeterminada
-                        Desktop.getDesktop().open(path.toFile());
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        fallos.set("Error al escribir en el archivo.");
-                    }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    fallos.set("Error al acceder a la base de datos.");
-                }
-            });
-        } catch (SQLException e) {
-            e.printStackTrace();
-            fallos.set("Error al conectar con la base de datos.");
-        }
-    }
 }

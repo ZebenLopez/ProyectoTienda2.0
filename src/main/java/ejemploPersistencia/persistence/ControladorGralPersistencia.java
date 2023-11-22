@@ -32,9 +32,6 @@ public class ControladorGralPersistencia {
     public void crearPedido(Pedidos pedidos){
         jpaPedidos.create(pedidos);
     }
-    public void buscarPedido(int id){
-        jpaPedidos.findPedidos(id);
-    }
 
     public void borrarPedido(int numeroPedido) {
         try{
