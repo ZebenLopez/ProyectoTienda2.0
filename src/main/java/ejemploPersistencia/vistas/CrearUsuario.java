@@ -17,6 +17,8 @@ import ejemploPersistencia.utils.Validacion;
 public class CrearUsuario extends javax.swing.JDialog {
 
     Validacion validacion = new Validacion();
+    PantallaPrincipal login = new PantallaPrincipal();
+
 
     public CrearUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -299,6 +301,9 @@ public class CrearUsuario extends javax.swing.JDialog {
             ControladorGralModelo registroUsuario = new ControladorGralModelo();
             Usuario usuario = new Usuario(textFieldUsuario.getText(), textFieldContrasenya.getText(), (String) comboBoxRol.getSelectedItem());
             registroUsuario.crearUsuario(usuario);
+            textFieldUsuario.setText("");
+            textFieldContrasenya.setText("");
+            textFieldRepetirContrasenya.setText("");
         }
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 
@@ -326,7 +331,6 @@ public class CrearUsuario extends javax.swing.JDialog {
     private void buttonIrAIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrAIniciarSesionActionPerformed
         // TODO add your handling code here:
         dispose();
-        PantallaPrincipal login = new PantallaPrincipal();
         login.setVisible(true);
 //        IniciarSesion iniciarSesion = new IniciarSesion((Frame) this.getParent(), true);
 //        iniciarSesion.setVisible(true);

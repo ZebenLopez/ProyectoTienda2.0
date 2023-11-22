@@ -46,8 +46,8 @@ public class Validacion {
         fallos = new AtomicReference<>("");
 
         // Comprueba si el nombre de usuario solo contiene letras y números
-        if (!user.matches("^[A-Z]*$") || user.length() < 4) {
-            fallos.set("El nombre de usuario solo puede contener letras Mayúsculas y ha de tener al menos 4 caracteres");
+        if (!user.matches("^[A-Z]*$") || user.length() < 4 || user.length() > 12) {
+            fallos.set("El nombre de usuario solo puede contener letras Mayúsculas y ha de tener aentre 4 y 12 caracteres");
         } else {
             comprobarExistenciaUsuariosRegistro(user);
         }
