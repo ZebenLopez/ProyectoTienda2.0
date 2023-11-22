@@ -25,7 +25,6 @@ public class CrearUsuario extends javax.swing.JDialog {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(204, 102, 255));  //color del background
         setLocationRelativeTo(null);
-        System.out.println("Lorena me va a volver loco");
     }
 
     @SuppressWarnings("unchecked")
@@ -332,8 +331,6 @@ public class CrearUsuario extends javax.swing.JDialog {
         // TODO add your handling code here:
         dispose();
         login.setVisible(true);
-//        IniciarSesion iniciarSesion = new IniciarSesion((Frame) this.getParent(), true);
-//        iniciarSesion.setVisible(true);
     }//GEN-LAST:event_buttonIrAIniciarSesionActionPerformed
 
     private void textFieldRepetirContrasenyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRepetirContrasenyaActionPerformed

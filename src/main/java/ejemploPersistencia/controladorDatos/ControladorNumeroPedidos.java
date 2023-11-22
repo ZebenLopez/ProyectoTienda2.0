@@ -32,8 +32,6 @@ public class ControladorNumeroPedidos {
     }
 
     public List<Pedidos> listaPedidos(int codigoPedido) {
-        System.out.println("Buscando pedidos con codigoProducto: " + codigoPedido);
-        System.out.println("Número de pedidos disponibles: " + pedidos.size());
 
         List<Pedidos> listaPedidos = new ArrayList<>();
         for (Pedidos pedido : pedidos) {
