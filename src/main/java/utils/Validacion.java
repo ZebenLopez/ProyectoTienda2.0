@@ -3,20 +3,8 @@ package utils;
 import ejemploPersistencia.models.Usuario;
 import ejemploPersistencia.persistence.ControladorGralPersistencia;
 import ejemploPersistencia.persistence.UsuarioJpaController;
-
-import javax.swing.*;
-import java.awt.*;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-
-import static org.eclipse.persistence.jaxb.javamodel.Helper.URL;
 
 /**
  *
@@ -58,15 +46,15 @@ public class Validacion {
         fallos = new AtomicReference<>("");
 
         // Comprueba si el nombre de usuario solo contiene letras y números
-        if (!user.matches("^[A-Z]*$")) {
-            fallos.set("El nombre de usuario solo puede contener letras Mayúsculas");
+        if (!user.matches("^[A-Z]*$") || user.length() < 4) {
+            fallos.set("El nombre de usuario solo puede contener letras Mayúsculas y ha de tener al menos 4 caracteres");
         } else {
             comprobarExistenciaUsuariosRegistro(user);
         }
 
         // Comprueba si la contraseña solo contiene números
-        if (!contrasegna.matches("^[0-9]*$")) {
-            fallos.set("La contraseña solo puede contener números");
+        if (!contrasegna.matches("^[0-9]*$") || contrasegna.length() < 5 || contrasegna.length() > 10) {
+            fallos.set("La contraseña solo puede contener números y debe tener entre 5 y 10 caracteres");
         } else {
             comprobarIgualdadContrasegna(contrasegna, contrasegnaRepetida);
         }

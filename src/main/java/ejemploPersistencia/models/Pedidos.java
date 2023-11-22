@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ejemploPersistencia.models;
 
 import java.io.Serializable;
@@ -40,10 +36,6 @@ public class Pedidos implements Serializable {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public Pedidos() {
     }
 
@@ -63,21 +55,6 @@ public class Pedidos implements Serializable {
         return cantidad;
     }
 
-    public void setNumeroPedido(int numeroPedido) {
-        this.numeroPedido = numeroPedido;
-    }
-
-    public void setPrecioProducto(double codigoProducto) {
-        this.precioProducto = codigoProducto;
-    }
-
-    public void setSnack(String snack) {
-        this.snack = snack;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
 
     @Override
     public String toString() {

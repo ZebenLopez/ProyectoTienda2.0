@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ejemploPersistencia.models;
 
 import java.io.Serializable;
@@ -14,6 +10,8 @@ import javax.persistence.Id;
 /**
  *
  * @author Zeben
+ * @author Lorena
+ * @version 1.0
  */
 @Entity
 public class Usuario implements Serializable {
@@ -25,10 +23,6 @@ public class Usuario implements Serializable {
     @Basic
     private String contrasegna;
     private String rol;
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
 
     public String getRol() {
         return rol;
@@ -44,10 +38,6 @@ public class Usuario implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contrasegna = contraseña;
     }
 
     public Usuario(String nombreu, String clave, String rol) {

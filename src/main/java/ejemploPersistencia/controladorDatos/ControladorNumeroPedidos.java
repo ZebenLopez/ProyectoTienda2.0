@@ -1,15 +1,18 @@
 package ejemploPersistencia.controladorDatos;
 
 import ejemploPersistencia.models.Pedidos;
-import ejemploPersistencia.persistence.ControladorGralPersistencia;
 import ejemploPersistencia.persistence.PedidosJpaController;
-
-import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ *
+ * @author Zeben
+ * @author Lorena
+ * @version 1.0
+ */
 public class ControladorNumeroPedidos {
     PedidosJpaController jpaPedidos = new PedidosJpaController();
     List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();

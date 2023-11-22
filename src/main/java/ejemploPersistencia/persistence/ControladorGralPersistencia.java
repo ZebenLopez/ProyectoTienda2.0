@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 /**
  *
  * @author Zeben
+ * @author Lorena
+ * @version 1.0
  */
 public class ControladorGralPersistencia {
     UsuarioJpaController jpaUsuario = new UsuarioJpaController();

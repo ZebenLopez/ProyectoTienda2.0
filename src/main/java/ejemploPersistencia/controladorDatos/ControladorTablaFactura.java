@@ -19,7 +19,9 @@ import java.util.Map;
 
 /**
  *
- * @author loren
+ * @author Zeben
+ * @author Lorena
+ * @version 1.0
  */
 public class ControladorTablaFactura {
     ArrayList<Pedidos> pedido = new ArrayList();
