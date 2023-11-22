@@ -2,7 +2,7 @@ package ejemploPersistencia.vistas;
 
 import java.util.Objects;
 import javax.swing.JFrame;
-import utils.Validacion;
+import ejemploPersistencia.utils.Validacion;
 
 /**
  *

@@ -1,9 +1,6 @@
 package ejemploPersistencia.controladorDatos;
 
 import ejemploPersistencia.models.Pedidos;
-import ejemploPersistencia.models.Usuario;
-import ejemploPersistencia.vistas.PantallaPrincipal;
-import utils.Validacion;
 
 import static ejemploPersistencia.vistas.InterfazPrincipalCamarero.tableModel;
 

@@ -23,14 +23,6 @@ public class ControladorGralPersistencia {
        return jpaUsuario;
    }
     
-    public void borrarUsuario(String nombre) {
-      try{
-          jpaUsuario.destroy(nombre);
-      } catch(NonexistentEntityException e){
-          Logger.getLogger(ControladorGralPersistencia.class.getName()).log(Level.SEVERE, null, e);
-      }
-    }
-    
     public void crearPedido(Pedidos pedidos){
         jpaPedidos.create(pedidos);
     }

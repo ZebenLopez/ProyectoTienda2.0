@@ -6,7 +6,7 @@ package ejemploPersistencia.vistas;
 
 import ejemploPersistencia.models.ControladorGralModelo;
 import ejemploPersistencia.models.Usuario;
-import utils.Validacion;
+import ejemploPersistencia.utils.Validacion;
 
 /**
  *

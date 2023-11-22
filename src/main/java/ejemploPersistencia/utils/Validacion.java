@@ -1,4 +1,4 @@
-package utils;
+package ejemploPersistencia.utils;
 
 import ejemploPersistencia.models.Usuario;
 import ejemploPersistencia.persistence.ControladorGralPersistencia;

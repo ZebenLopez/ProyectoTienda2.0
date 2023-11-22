@@ -1,4 +1,4 @@
-package utils;
+package ejemploPersistencia.utils;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
