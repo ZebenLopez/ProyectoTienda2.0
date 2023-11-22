@@ -33,24 +33,24 @@ public class Validacion {
 
     public boolean validarLogin(String usuario, String contrasegna) {
         boolean validar = false;
-        fallos = new AtomicReference<>("");
+        List<String> fallos = new ArrayList<>();
 
-        // Comprueba si el nombre de usuario solo contiene letras y números
+        // Comprueba si el nombre de usuario solo contiene letras y tiene al menos 4 caracteres
         if (!usuario.matches("^[A-Z]*$")) {
-            fallos.set("El nombre de usuario solo puede contener letras Mayúsculas");
+            fallos.add("El nombre de usuario solo puede contener letras Mayúsculas");
         } else {
             comprobarExistenciaUsuariosLogin(usuario, contrasegna);
         }
 
-        // Comprueba si la contraseña solo contiene números
-        if (!contrasegna.matches("^[0-9]*$")) {
-            fallos.set("La contraseña solo puede contener números");
+        // Comprueba si la contraseña solo contiene números y tiene entre 5 y 10 caracteres
+        if (!contrasegna.matches("^[0-9]*$") || contrasegna.length() < 5 || contrasegna.length() > 10) {
+            fallos.add("La contraseña solo puede contener números");
         } else {
             // Aquí puedes agregar más validaciones si es necesario
         }
 
-        if (!fallos.get().isEmpty()) {
-            ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
+        if (!fallos.isEmpty()) {
+            ValidacionUtils.createJOptionPanel(String.join("\n", fallos), "Error", 0);
         } else {
             validar = true;
         }
@@ -59,24 +59,24 @@ public class Validacion {
 
     public boolean validarRegistro(String user, String contrasegna, String contrasegnaRepetida) {
         boolean validar = false;
-        fallos = new AtomicReference<>("");
+        List<String> fallos = new ArrayList<>();
 
-        // Comprueba si el nombre de usuario solo contiene letras y números
-        if (!user.matches("^[A-Z]*$")) {
-            fallos.set("El nombre de usuario solo puede contener letras Mayúsculas");
+        // Comprueba si el nombre de usuario solo contiene letras y tiene al menos 4 caracteres
+        if (!user.matches("^[A-Z]*$") || user.length() < 4) {
+            fallos.add("El nombre de usuario solo puede contener letras Mayúsculas y debe tener al menos 4 caracteres");
         } else {
             comprobarExistenciaUsuariosRegistro(user);
         }
 
-        // Comprueba si la contraseña solo contiene números
-        if (!contrasegna.matches("^[0-9]*$")) {
-            fallos.set("La contraseña solo puede contener números");
-        } else {
-            comprobarIgualdadContrasegna(contrasegna, contrasegnaRepetida);
+        // Comprueba si la contraseña solo contiene números y tiene entre 5 y 10 caracteres
+        if (!contrasegna.matches("^[0-9]*$") || contrasegna.length() < 5 || contrasegna.length() > 10) {
+            fallos.add("La contraseña solo puede contener números y debe tener entre 5 y 10 caracteres");
+        } else if (!contrasegna.equals(contrasegnaRepetida)) {
+            fallos.add("Las contraseñas no coinciden");
         }
 
-        if (!fallos.get().isEmpty()) {
-            ValidacionUtils.createJOptionPanel(String.valueOf(fallos), "Error", 0);
+        if (!fallos.isEmpty()) {
+            ValidacionUtils.createJOptionPanel(String.join("\n", fallos), "Error", 0);
         } else {
             ValidacionUtils.createJOptionPanel("Usuario " + user + " registrado con contraseña " + contrasegna, "Registrado", 1);
             validar = true;
@@ -103,7 +103,6 @@ public class Validacion {
         Usuario usuario = jpaUsuarioLogin.findUsuario(userLogin, contrasegnaLogin);
 
         if (usuario != null) {
-            userLogin = usuario.getNombre();
             System.out.println("Usuario encontrado: " + usuario.getNombre());
         } else {
             fallos.set("Usuario y contraseña no coinciden!");

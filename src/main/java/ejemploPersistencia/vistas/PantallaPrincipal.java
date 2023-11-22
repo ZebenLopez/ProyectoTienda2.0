@@ -276,8 +276,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 dispose();
                 InterfazPrincipalCamarero camarero = new InterfazPrincipalCamarero((JFrame) this.getParent(), true);
                 camarero.setVisible(true);
-                usuario = textFieldUsuario.getText();
-                System.out.println("Usuariooooo: " + usuario);
             } else {
                 dispose();
                 InterfazCocinero cocinero = new InterfazCocinero((JFrame) this.getParent(), true);

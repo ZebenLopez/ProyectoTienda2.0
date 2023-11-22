@@ -63,9 +63,9 @@ public class ControladorTablaFactura {
             precioFinal += subtotal;
         }
         factura.append(String.format("PRECIO FINAL: %.2f€%n", precioFinal));
-        factura.append(String.format("IGIC: %.2f€%n", precioFinal * 0.07)).append("\n");;
+        factura.append(String.format("IGIC incluido: %.2f€%n", precioFinal * 0.07));
 
-        factura.append(String.format("Gracias por su visita, vuelva pronto!"));
+        factura.append("\nGracias por su visita, vuelva pronto!");
         return factura.toString();
     }
 

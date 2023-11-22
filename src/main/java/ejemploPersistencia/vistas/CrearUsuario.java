@@ -303,7 +303,6 @@ public class CrearUsuario extends javax.swing.JDialog {
 
     private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
-        //Falta control de excepciones para password y no se repita user
         if (validacion.validarRegistro(textFieldUsuario.getText(), textFieldContrasenya.getText(), textFieldRepetirContrasenya.getText())) {
             ControladorGralModelo registroUsuario = new ControladorGralModelo();
             Usuario usuario = new Usuario(textFieldUsuario.getText(), textFieldContrasenya.getText(), (String) comboBoxRol.getSelectedItem());
