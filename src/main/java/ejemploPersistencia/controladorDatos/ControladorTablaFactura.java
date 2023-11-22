@@ -52,7 +52,7 @@ public class ControladorTablaFactura {
     public String generarFactura(ArrayList<Pedidos> pedidos) {
         StringBuilder factura = new StringBuilder();
         double precioFinal = 0;
-        String nombre = "<<< TIENDA NEKO >>>";
+        String nombre = "<<< CAFETERÍA NEKO >>>";
         factura.append(String.format("%50s", nombre)).append("\n");
         factura.append(String.format("NUMERO PEDIDO: %d%n", pedidos.get(0).getNumeroPedido()));
         factura.append("---------------------------------------------\n");
