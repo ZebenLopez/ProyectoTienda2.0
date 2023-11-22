@@ -66,7 +66,7 @@ public class InterfazCocinero extends javax.swing.JDialog {
 
                 },
                 new String[]{
-                        "Snack", "Preparando", "Emplatado"
+                        "Número Pedido", "Snack", "Cantidad"
                 }
         ) {
             Class[] types = new Class[]{
