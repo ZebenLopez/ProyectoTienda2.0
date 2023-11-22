@@ -21,19 +21,27 @@ public class Pedidos implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int numeroPedido;
-    @Id
-    private int codigoProducto;
+    private int codigo;
     @Basic
+    private int numeroPedido;
+    private int codigoProducto;
     private String snack;
     private int cantidad;
 
-
-    public Pedidos(int numeroPedido, int codigoProducto, String snack, int cantidad) {
+    public Pedidos(int codigo, int numeroPedido, int codigoProducto, String snack, int cantidad) {
+        this.codigo = codigo;
         this.numeroPedido = numeroPedido;
         this.codigoProducto = codigoProducto;
         this.snack = snack;
         this.cantidad = cantidad;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public Pedidos() {

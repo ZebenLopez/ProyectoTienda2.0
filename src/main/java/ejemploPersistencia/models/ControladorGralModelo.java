@@ -26,7 +26,7 @@ public class ControladorGralModelo {
         enlaceModeloPersistencia.crearPedido(pedido);
     }
 
-    public void buscarPedido(int id){
-        enlaceModeloPersistencia.buscarPedido(id);
+    public void borrarPedido(int i) throws NonexistentEntityException {
+        enlaceModeloPersistencia.borrarPedido(i);
     }
 }

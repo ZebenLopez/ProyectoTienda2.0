@@ -15,6 +15,7 @@ public class ControladorNumeroPedidos {
     List<Pedidos> pedidos = jpaPedidos.findPedidosEntities();
 
     public List<String> numeroPedidos() {
+        pedidos = jpaPedidos.findPedidosEntities();
         Set<String> numeros = new HashSet<>();
         for (Pedidos pedido : pedidos) {
             numeros.add(String.valueOf(pedido.getNumeroPedido()));
@@ -38,7 +39,6 @@ public class ControladorNumeroPedidos {
             }
         }
 
-        System.out.println("Número de pedidos encontrados: " + listaPedidos.size());
         return listaPedidos;
     }
 }

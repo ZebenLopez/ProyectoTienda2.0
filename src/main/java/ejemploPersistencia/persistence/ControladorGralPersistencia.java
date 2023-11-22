@@ -36,4 +36,11 @@ public class ControladorGralPersistencia {
         jpaPedidos.findPedidos(id);
     }
 
+    public void borrarPedido(int numeroPedido) {
+        try{
+            jpaPedidos.destroy(numeroPedido);
+        } catch(NonexistentEntityException e){
+            Logger.getLogger(ControladorGralPersistencia.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
 }

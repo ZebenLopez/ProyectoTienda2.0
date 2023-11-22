@@ -6,6 +6,7 @@ package ejemploPersistencia.persistence;
 
 import ejemploPersistencia.exceptions.NonexistentEntityException;
 import ejemploPersistencia.models.Pedidos;
+
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -17,7 +18,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 /**
- *
  * @author Zeben
  */
 public class PedidosJpaController implements Serializable {
@@ -25,9 +25,11 @@ public class PedidosJpaController implements Serializable {
     public PedidosJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-        public PedidosJpaController (){
+
+    public PedidosJpaController() {
         emf = Persistence.createEntityManagerFactory("unidadPersistencia");
     }
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
@@ -58,7 +60,7 @@ public class PedidosJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = pedidos.getNumeroPedido();
+                int id = pedidos.getCodigo();
                 if (findPedidos(id) == null) {
                     throw new NonexistentEntityException("The pedidos with id " + id + " no longer exists.");
                 }
@@ -71,19 +73,20 @@ public class PedidosJpaController implements Serializable {
         }
     }
 
-    public void destroy(int id) throws NonexistentEntityException {
+    public void destroy(int numeroPedido) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Pedidos pedidos;
-            try {
-                pedidos = em.getReference(Pedidos.class, id);
-                pedidos.getNumeroPedido();
-            } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The pedidos with id " + id + " no longer exists.", enfe);
+            Query query = em.createQuery("SELECT p FROM Pedidos p WHERE p.numeroPedido = :NUMEROPEDIDO");
+            query.setParameter("NUMEROPEDIDO", numeroPedido);
+            List<Pedidos> pedidos = query.getResultList();
+            if (pedidos.isEmpty()) {
+                throw new NonexistentEntityException("No existen pedidos con el número de pedido " + numeroPedido);
             }
-            em.remove(pedidos);
+            for (Pedidos pedido : pedidos) {
+                em.remove(pedido);
+            }
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -91,6 +94,27 @@ public class PedidosJpaController implements Serializable {
             }
         }
     }
+
+//    public void destroy(int id) throws NonexistentEntityException {
+//        EntityManager em = null;
+//        try {
+//            em = getEntityManager();
+//            em.getTransaction().begin();
+//            Pedidos pedidos;
+//            try {
+//                pedidos = em.getReference(Pedidos.class, id);
+//                pedidos.getNumeroPedido();
+//            } catch (EntityNotFoundException enfe) {
+//                throw new NonexistentEntityException("The pedidos with id " + id + " no longer exists.", enfe);
+//            }
+//            em.remove(pedidos);
+//            em.getTransaction().commit();
+//        } finally {
+//            if (em != null) {
+//                em.close();
+//            }
+//        }
+//    }
 
     public List<Pedidos> findPedidosEntities() {
         return findPedidosEntities(true, -1, -1);
@@ -137,5 +161,5 @@ public class PedidosJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
