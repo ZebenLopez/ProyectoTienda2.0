@@ -135,7 +135,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         buttonInicioSesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonInicioSesionActionPerformed(evt);
+                buttonCrearUserActionPerformed(evt);
             }
         });
 
@@ -146,7 +146,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         buttonCrearUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCrearUsuarioActionPerformed(evt);
+                buttonIniciarSesionActionPerformed(evt);
             }
         });
 
@@ -261,14 +261,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkSesionIniciadaActionPerformed
 
-    private void buttonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInicioSesionActionPerformed
+    private void buttonCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInicioSesionActionPerformed
         // TODO add your handling code here:
         dispose();
         CrearUsuario crearUsuario = new CrearUsuario((JFrame) this.getParent(), true);
         crearUsuario.setVisible(true);
     }//GEN-LAST:event_buttonInicioSesionActionPerformed
 
-    private void buttonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
+    private void buttonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearUsuarioActionPerformed
         // TODO add your handling code here:
         String rol = "Camarero/a";
         if (validacion.validarLogin(textFieldUsuario.getText(), textFieldContrasenya.getText())) {
@@ -276,12 +276,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 dispose();
                 InterfazPrincipalCamarero camarero = new InterfazPrincipalCamarero((JFrame) this.getParent(), true);
                 camarero.setVisible(true);
+                usuario = textFieldUsuario.getText();
+                System.out.println("Usuariooooo: " + usuario);
             } else {
                 dispose();
                 InterfazCocinero cocinero = new InterfazCocinero((JFrame) this.getParent(), true);
                 cocinero.setVisible(true);
             }
-            usuario = textFieldUsuario.getText();
         }
     }//GEN-LAST:event_buttonCrearUsuarioActionPerformed
 

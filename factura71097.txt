@@ -1,9 +1,0 @@
-NUMERO PEDIDO: 71097
----------------------------------------------
-PRODUCTO: Crepes     CANTIDAD: 4   PRECIO INDIVIDUAL: 3,50 € PRECIO SUBTOTAL: 14,00€
----------------------------------------------
-PRODUCTO: Croissant  CANTIDAD: 4   PRECIO INDIVIDUAL: 2,20 € PRECIO SUBTOTAL: 8,80 €
----------------------------------------------
-PRODUCTO: Donut      CANTIDAD: 4   PRECIO INDIVIDUAL: 1,50 € PRECIO SUBTOTAL: 6,00 €
----------------------------------------------
-PRECIO FINAL: 28,80€

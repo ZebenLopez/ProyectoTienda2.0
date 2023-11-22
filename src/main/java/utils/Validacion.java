@@ -92,7 +92,6 @@ public class Validacion {
         if (usuario != null) {
             return usuario.getRol();
         } else {
-            System.out.println("Usuario y contraseña no coinciden!");
             return null;
         }
     }
@@ -104,6 +103,7 @@ public class Validacion {
         Usuario usuario = jpaUsuarioLogin.findUsuario(userLogin, contrasegnaLogin);
 
         if (usuario != null) {
+            userLogin = usuario.getNombre();
             System.out.println("Usuario encontrado: " + usuario.getNombre());
         } else {
             fallos.set("Usuario y contraseña no coinciden!");

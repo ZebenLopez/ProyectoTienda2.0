@@ -3,6 +3,7 @@ package ejemploPersistencia.controladorDatos;
 import ejemploPersistencia.models.Pedidos;
 import ejemploPersistencia.models.Usuario;
 import ejemploPersistencia.vistas.PantallaPrincipal;
+import utils.Validacion;
 
 import static ejemploPersistencia.vistas.InterfazPrincipalCamarero.tableModel;
 
@@ -47,22 +48,24 @@ public class ControladorTablaFactura {
     }
 
     public String generarFactura(ArrayList<Pedidos> pedidos) {
-        PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
         StringBuilder factura = new StringBuilder();
         double precioFinal = 0;
+        String nombre = "<<< TIENDA NEKO >>>";
+        factura.append(String.format("%50s", nombre)).append("\n");
         factura.append(String.format("NUMERO PEDIDO: %d%n", pedidos.get(0).getNumeroPedido()));
         factura.append("---------------------------------------------\n");
 
         for (Pedidos pedido : pedidos) {
             double subtotal = pedido.getCantidad() * pedido.getPrecioProducto();
-            factura.append(String.format("PRODUCTO: %-10s CANTIDAD: %-3d PRECIO INDIVIDUAL: %-7.2f€ PRECIO TOTAL: %-5.2f€%n",
+            factura.append(String.format("PRODUCTO: %-20s CANTIDAD: %-3d PRECIO INDIVIDUAL: %-7.2f€ PRECIO TOTAL: %-5.2f€%n",
                     pedido.getSnack(), pedido.getCantidad(), pedido.getPrecioProducto(), subtotal));
             factura.append("---------------------------------------------\n");
             precioFinal += subtotal;
         }
         factura.append(String.format("PRECIO FINAL: %.2f€%n", precioFinal));
-        factura.append(String.format("IGIC: %.2f€%n", precioFinal * 0.07));
-        factura.append(String.format("Le ha atendido %s%n", PantallaPrincipal.getUsuario()));
+        factura.append(String.format("IGIC: %.2f€%n", precioFinal * 0.07)).append("\n");;
+
+        factura.append(String.format("Gracias por su visita, vuelva pronto!"));
         return factura.toString();
     }
 
